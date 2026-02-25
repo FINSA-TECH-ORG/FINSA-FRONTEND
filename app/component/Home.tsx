@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Home() {
    const headline = "Developing Future-Ready Finance Leaders";
 
-  const words = headline.split(" ");
+  
 return(
   <section className="relative w-full h-screen  lg:min-h-[800px] bg-[#F7FFF6] bg-white flex items-center justify-center overflow-hidden">
 
@@ -17,7 +17,7 @@ return(
         <Image
           src={FINSAGroup}
           alt="FINSA Institutional"
-          className="w-full h-full object-cover hidden md:block"
+          className="w-full h-full  md:object-cover hidden md:block"
         />
        
         <div className="absolute inset-0 bg-black/40 md:block hidden" />
@@ -41,7 +41,7 @@ return(
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="lg:text-white  text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
+          className="md:text-white  text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
         >
           Developing Future-Ready Finance Leaders
         </motion.h1>
@@ -60,24 +60,18 @@ return(
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 my-5 justify-center mt-8">
-          <Link
-            href="#"
+          <a
+            href="#About"
             className="px-6 py-3 rounded-md font-semibold"
             style={{
               backgroundColor: "#1853AD",
               color: "#FFFFFF"
             }}
           >
-            Primary Action
-          </Link>
+           Get to Know Us.
+          </a>
 
-          <Link
-            href="#"
-            className="px-6 py-3 md:text-[#F7FFF6] blacktext- md:border-[#F7FFF6] border-black rounded-md font-semibold border"
-            
-          >
-            Secondary Action
-          </Link>
+      
         </div>
 </div>
       </div>

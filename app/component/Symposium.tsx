@@ -15,7 +15,7 @@ export const Symposium: React.FC = () => {
             </h3>
           </div>
           <p className="text-white/70 max-w-sm text-lg italic border-l border-[#b24a53] pl-4">
-            "Where the theories of the classroom meet the wisdom of the industry’s greatest minds."
+            Where the theories of the classroom meet the wisdom of the industry’s greatest minds.
           </p>
         </div>
 

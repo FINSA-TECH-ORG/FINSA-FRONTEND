@@ -5,22 +5,26 @@ import { MentorshipSection } from "./component/Mentorship";
 import { ImpactSection } from "./component/CurriculumMgt";
 import { Symposium } from "./component/Symposium";
 import { TestimonialSection } from "./component/Testimonial";
+import { About } from "./component/About";
 export default function Layout() {
 
 
   return (
    <section>
    <Home/>
-    {/* SponsorShip Deals */}
-    <SponsorSection/>
-    {/* MentorShip Section */}
+   {/* About Comprises of the History, Mission and Vision */}
+   <About/>
+ {/* MentorShip Section */}
     <MentorshipSection/>
-    {/* Curriculum mgt and coordination  */}
+   {/* Curriculum mgt and coordination  */}
     <ImpactSection/>
-    {/* Biggest Events of the session */}
+ {/* Biggest Events of the session */}
     <Symposium/>
-    {/* Testimonials */}
+{/* SponsorShip Deals */}
+    <SponsorSection/>
+  {/* Testimonials */}
     <TestimonialSection/>
+   
     </section>
    
   );
