@@ -16,8 +16,7 @@ const InternshipHub = () => {
             Internships & <span className="text-[#b24a53]">Openings.</span>
           </p>
         </div>
-
-        {/* The Update Bar List */}
+ {/* The Update Bar List */}
         <div className="space-y-4">
           {opportunities.map((op) => (
             <div 
