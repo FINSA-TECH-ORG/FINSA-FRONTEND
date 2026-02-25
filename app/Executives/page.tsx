@@ -5,7 +5,7 @@ const executives = [
   {
     id: 1,
     role: "President",
-    name: "Oladimeji Hammed",
+    name: "Hamed Tijani",
     bio: "Driving the strategic vision of FINSA with a focus on institutional partnerships and global benchmarking. Adewale has spearheaded the 2026 Expansion roadmap.",
     image: "/President.jpg"
   },
@@ -13,20 +13,20 @@ const executives = [
     id: 2,
     role: "Vice President",
     name: "David O. Owoyemi",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: "David Provides strategic support to the President, oversees academic affairs to uphold high standards and student development, and coordinates programs and committees to ensure alignment with the association’s vision and objectives.",
     image: "/VicePresident.jpg"
   },
   {
     id: 3,
     role: "General Secretary",
     name: "Amarachi Nwogu",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: "Amarachi is a key administrative leader responsible for coordination between students, committees, and executives . She manage records, agendas, and communications while voicing concerns, ensuring compliance, and promoting inclusivity through strong organization and leadership skills.",
     image: "/GenSec.jpg"
   },
   {
     id: 4,
     role: "Assistant General Secretary",
-    name: "Foyinsola S.Olaosebikan",
+    name: "Foyinsola S. Olaosebikan",
     bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
     image: "/AssistantGenSec.jpg"
   },
@@ -41,35 +41,35 @@ const executives = [
     id: 6,
     role: "Treasurer",
     name: "John Ocheme",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: "John handles dues collection, verify payments, and follow up with students who have outstanding obligatory fees. He also works closely with the Financial Secretary to maintain accurate financial records and supports other executive members to ensure the smooth running of the association.",
     image: "/Treasurer.jpg"
   },
   {
     id: 7,
     role: "Sport Secretary",
     name: "Prosper Chukwuebuka Ugbor",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: "Prosper is the Administrative head in charge of FINSA sport Activities. He handles correspondence, meeting minutes/agendas, records, membership, event coordination, official communications, and compliance to support smooth sports operations.",
     image: "/SportSec.jpg"
   },
    {
     id: 8,
     role: "Social Secretary",
-    name: "Eunice Jagunna",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    name: "Eunice Jagunna Toluwalase",
+    bio: " Eunice is responsible for promoting the welfare and unity of members by organizing social activities and events, coordinating member engagement initiatives, celebrating important occasions, and ensuring effective communication that strengthens bonding and participation within the association.",
     image: "/SocialSec.jpg"
   },
    {
     id: 9,
     role: "Welfare Secretary",
     name: "Daniella Ugwuebgbu",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: " Daniella serves as the Welfare Secretary, prioritizing the well-being and comfort of students within the association. She coordinates welfare initiatives, plans supportive programs, and ensures that members feel heard, valued, and included. She works closely with other executives to create a balanced academic and social environment, while providing guidance and assistance when students need it most. Through empathy, organization, and dedication, she helps make student life more enjoyable and stress-free.",
     image: "/WelFareSec.jpg"
   },
   {
     id: 10,
     role: "Public Relations officer",
     name: "Adeyehun Temitope",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: " Temitope serve as the voice and image of the association by communicating important information to students, promoting our programs and events, managing our public image, and building strong relationships between the association, the student body, and the school management.",
     image: "/PublicRelationOfficer.jpg"
   }
 ];
