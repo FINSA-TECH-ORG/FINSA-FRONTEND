@@ -75,7 +75,7 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
 
       {/* --- MODAL WITH BLUR BACKGROUND --- */}
       {selectedOp && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-6">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-8">
           {/* Backdrop with Blur */}
           <div 
             className="absolute inset-0 bg-[#1853ad]/40 backdrop-blur-md transition-opacity" 
