@@ -36,7 +36,7 @@ export default function LandingPage() {
   return (
    <section>
     <script type="application/ld+json"
-     dangerouslySetInnerHTML={{__html : JSON.stringify({organizationSchema})}}/>
+     dangerouslySetInnerHTML={{__html : JSON.stringify(organizationSchema)}}/>
       <Home/>
     {/* About Comprises of the History, Mission and Vision */}
     <About/>
