@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import SponsorImage from "../../public/SponsorsFinsa.jpeg"
-
+import ProposalModal from './ProposalModal';
 
 
 export const SponsorSection: React.FC = () => {
@@ -40,9 +40,7 @@ export const SponsorSection: React.FC = () => {
             <h3 className="text-[#1853ad] font-bold text-xl">Ready to invest in the next generation?</h3>
             <p className="text-[#6c788e]">Download our 2026 Partnership Prospectus to see our impact metrics.</p>
           </div>
-          <button className="bg-[#1853ad] hover:bg-[#0c95d9] text-white px-8 py-3 rounded-lg font-semibold transition-all shadow-md active:scale-95">
-            Partner With FINSA
-          </button>
+         <ProposalModal/>
         </div>
 
       </div>

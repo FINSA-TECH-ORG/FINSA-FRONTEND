@@ -11,13 +11,13 @@ export const ImpactSection: React.FC = () => {
     {
       id: "02",
       title: "Professional Immersion",
-      items: ["Corporate Office Visits", "Top-Tier Business Invitations", "Direct Internship Pipelines"],
+      items: ["Corporate Office Visits", , "Direct Internship Pipelines"],
       description: "Bridging the gap between theory and the boardroom through direct exposure to industry leaders and real-world work environments."
     },
     {
       id: "03",
       title: "Holistic Excellence",
-      items: ["Competitive Sports Leagues", "Annual Scholar Award Ceremonies"],
+      items: ["Competitive Sports Leagues", "Annual Dinner Award Ceremonies"],
       description: "Cultivating well-rounded professionals by celebrating academic merit and fostering leadership through team-based athletics."
     }
   ];

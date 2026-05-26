@@ -3,7 +3,7 @@ import FinsaMobileImage from "../../public/FinsaMobileImage.jpg"
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "./nav";
-import Link from "next/link";
+
 
 export default function Home() {
    const headline = "Developing Future-Ready Finance Leaders";

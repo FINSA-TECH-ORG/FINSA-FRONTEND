@@ -10,25 +10,25 @@ interface FinsaEvent {
 export const eventMoments: FinsaEvent[] = [
     {
     id: 1,
-    title: "Unveiling 2026(TFS5.0)",
+    title: "Unlocking Potentials For Growth.",
     speaker: "To be revealed",
-    theme: "Coming Soon",
+    theme: "Africa’s Financial Renaissance: Inside FINSA’s Finance Symposium 5.0",
     stats: "When events concludes",
-    image: "/TFSFive.jpeg"
+    image: "/TFS5.jpeg"
   },{
     id: 2,
     title: "Global Finance in 2025(TFS 4.0)",
     speaker: "Big 4 Consulting Partners",
     theme: "The Future of Audit & AI Integration",
-    stats: "Enough Attendees to lit the place up",
+    stats: "2315 Attendees",
     image: "/TFSFour.jpg"
   },
   {
     id: 3,
-    title: "Beyond the Financial horizons in 2024 (TFS 3.0)",
+    title: "Charting the career paths, unveiling insights and mastering the markets",
     speaker: "Economists and Debt capital specialist",
-    theme: "Charting the career paths, unveiling insights and mastering the markets",
-    stats: "500+ Attendees",
+    theme: "Beyond the Financial horizons in 2024 (TFS 3.0)",
+    stats: "1500+ Attendees",
     image: "/TFSThree.jpg"
   },
   

@@ -46,8 +46,8 @@ export const Symposium: React.FC = () => {
                   <div className="h-[1px] w-12 bg-white/30" />
                 </div>
                 
-                <h4 className="text-2xl md:text-3xl font-bold mb-2">{event.title}</h4>
-                <p className="text-[#0c95d9] font-semibold mb-4 text-lg">Theme: {event.theme}</p>
+                <h4 className="text-2xl text-white md:text-3xl font-bold mb-2"> Theme: {event.theme}</h4>
+                <p className="text-[#0c95d9] font-semibold mb-4 text-lg">{event.title}</p>
                 
                 <div className="pt-6 border-t border-white/10 flex justify-between items-center">
                   <span className="text-white/60 text-sm">Keynote: {event.speaker}</span>

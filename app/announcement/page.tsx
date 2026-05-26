@@ -1,8 +1,26 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {announcements} from "../assets/Announcement";
+import { getAnnouncements } from '@app/lib/Finsa';
+import { Announcement } from '@app/lib/libTypes';
 const AnnouncementChannel = () => {
   const [activeNews, setActiveNews] = useState<any>(null);
+  const [announcementData, setAnnouncementData] = useState<Announcement[]>([]);
+   const FetchOpp = async()=> {
+    try {
+    const response =  await getAnnouncements()
+     setAnnouncementData(response)
+    }catch(err){
+      throw new Error("Error Occuring the")
+    }
+  //console.log(response)
+   }
+   useEffect(()=> {
+    const callBack = async()=> {
+    FetchOpp()
+    }
+    callBack()
+   },[])
 
   return (
     <section className="bg-white py-20 px-4 mt-10 min-h-screen">
@@ -33,15 +51,18 @@ const AnnouncementChannel = () => {
             >
               {/* Rectangular Accent */}
               <div className={`w-1.5 h-12 rounded-full mr-6 ${
+                // news.badge_type === 'high' ? 'bg-[#b24a53]' : 'bg-[#0c95d9]'
                 news.priority === 'high' ? 'bg-[#b24a53]' : 'bg-[#0c95d9]'
               }`} />
 
               <div className="flex-grow">
                 <div className="flex items-center gap-3 mb-1">
                   <span className={`text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded ${
-                    news.priority === 'high' ? 'bg-[#b24a53]/10 text-[#b24a53]' : 'bg-[#0c95d9]/10 text-[#0c95d9]'
+                    // news.badge_type === 'high' ? 'bg-[#b24a53]/10 text-[#b24a53]' : 'bg-[#0c95d9]/10 text-[#0c95d9]'
+                       news.priority === 'high' ? 'bg-[#b24a53]/10 text-[#b24a53]' : 'bg-[#0c95d9]/10 text-[#0c95d9]'
                   }`}>
-                    {news.tag}
+                    {/* {news.badge_type} */}
+                    {news?.priority}
                   </span>
                   <span className="text-[#6c788e] text-[10px] font-medium uppercase tracking-tighter">{news.time}</span>
                 </div>
@@ -84,7 +105,7 @@ const AnnouncementChannel = () => {
             </div>
 
             <p className="text-[#6c788e] text-lg leading-relaxed font-medium italic mb-8">
-              {activeNews.details}
+              {activeNews.full_message || activeNews?.summary}
             </p>
 
             <div className="flex justify-between items-center pt-6 border-t border-slate-100">

@@ -23,6 +23,8 @@ export interface Blog {
     publish_date: string;
     cover_image: string;
     slug: string;
+    content : string
+
 }
 
 export interface Opportunity {

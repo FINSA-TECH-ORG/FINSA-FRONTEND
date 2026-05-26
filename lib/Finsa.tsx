@@ -10,6 +10,11 @@ import {
 
 import { Schema, HomepageHero, Executive, Blog, Opportunity, Announcement, ContactInquiry } from "./libTypes";
 
+
+
+
+// 2. Map the collection names to their type definitions
+
 // ── Configuration ──────────────────────────────────────────────
 const DIRECTUS_URL =
     process.env.DIRECTUS_URL ||
@@ -32,9 +37,13 @@ async function withTimeout<T>(promise: Promise<T>): Promise<T> {
         )
     );
     try {
-        return await Promise.race([promise, timeout]);
+      //  if(!timeout) return;
+      const response =   await Promise.race([promise, timeout]);
+      if(!response) throw new Error("No response received");
+        return  response
+      
     } catch (error: any) {
-        console.error("[FINSA SDK]", error?.message ?? error);
+     //   console.error("[FINSA SDK]", error?.message ?? error);
         throw error;
     }
 }
@@ -73,10 +82,10 @@ interface GetBlogsOptions {
     limit?: number;
 }
 
-export async function getBlogs({ search = "", limit = 10 }: GetBlogsOptions = {}): Promise<Blog[]> {
+export async function getBlogs(search = "", limit : 10): Promise<Blog[]> {
     return withTimeout(
         client.request(
-            readItems("blogs", {
+            readItems("blogs" , {
                 fields: [
                     "id",
                     "title",
@@ -85,10 +94,38 @@ export async function getBlogs({ search = "", limit = 10 }: GetBlogsOptions = {}
                     "publish_date",
                     "cover_image",
                     "slug",
+                     "content"
                 ],
+               
                 sort: ["-publish_date"],
-                limit,
-                ...(search ? { search } : {}),
+                limit ,
+               ...(search ? { search } : {}),
+            })
+        )
+    );
+}
+
+export async function getBlogsBySlug(slug : string): Promise<Blog[]> {
+    return withTimeout(
+        client.request(
+            readItems("blogs" , {
+                fields: [
+                    "id",
+                    "title",
+                    "summary",
+                    "author",
+                    "publish_date",
+                    "cover_image",
+                    "slug",
+                     "content"
+                ],
+                filter : {
+                    slug: {
+                      _eq : slug
+                    }
+                },
+                sort: ["-publish_date"],
+               
             })
         )
     );
@@ -107,6 +144,7 @@ export async function getOpportunities(): Promise<Opportunity[]> {
                     "popup_details",
                     "application_link",
                 ],
+                
                 sort: ["deadline"],
             })
         )

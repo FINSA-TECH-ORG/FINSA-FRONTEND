@@ -1,12 +1,12 @@
 "use client";
 import Image from 'next/image';
-
+import { getExecutives } from '@app/lib/Finsa';
 const executives = [
   {
     id: 1,
     role: "President",
-    name: "Hamed Tijani",
-    bio: "Driving the strategic vision of FINSA with a focus on institutional partnerships and global benchmarking. Adewale has spearheaded the 2026 Expansion roadmap.",
+    name: "Hammed Tijani",
+    bio: "As the team leader, the Hammed heads the executive cabinet to keep everyone organized, motivated, and working toward the same goals. Serving as the official face of the association, he acts as the primary spokesperson when dealing with University authorities, professors, and external partners. Additionally, Hammed operates as the corporate liaison by meeting with executives, financial institutions, and guest speakers to secure sponsorships and career opportunities for students. Ultimately, he is the primary decision maker, holding full accountability for the association’s budget, strategy, and overall legacy during their tenure.",
     image: "/President.jpg"
   },
   {
@@ -27,14 +27,14 @@ const executives = [
     id: 4,
     role: "Assistant General Secretary",
     name: "Foyinsola S. Olaosebikan",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: "In this role, Foyinsola handles the documentation of executive meetings, ensuring that accurate minutes are recorded, decisions are tracked, and action items are clearly communicated to the cabinet. Foyinsola manages the association's official correspondence, scheduling, and member databases, keeping administrative pipelines running smoothly behind the scenes. When the General Secretary is unavailable, Foyinsola steps in to lead the secretariat.",
     image: "/AssistantGenSec.jpg"
   },
   {
     id: 5,
     role: "Financial Secretary",
     name: "Oderinde A. Aisha",
-    bio: "Leading the technical curriculum and mentorship wings. Chinaza ensures that every member's technical proficiency meets international street standards.",
+    bio: "As the primary accountant, Aishat records every source of incoming revenue, including member dues and corporate sponsorships, while verifying and authorizing all outgoing project expenses. Working closely with the President and the executive cabinet, this role drafts comprehensive budget allocations for major events and prepares detailed financial reports to present to university authorities and stakeholders. Additionally, She manages risk by keeping spending aligned with the association's capital limits, ensuring the treasury remains stable and fully capable of funding every planned initiative throughout the tenure.",
     image: "/FinSec.jpg"
   },
   {
@@ -75,6 +75,15 @@ const executives = [
 ];
 
 const ExecutiveProfiles = () => {
+
+
+  const fetchExecutives = async()=> {
+    try{
+    await getExecutives();
+    }catch(err){
+      throw new Error("Could Fetch the executives data..")
+    }
+  }
   return (
     <section className="bg-[#f7f7f6] py-24">
       <div className="max-w-7xl mx-auto px-6">

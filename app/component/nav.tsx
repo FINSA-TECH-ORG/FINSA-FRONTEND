@@ -3,27 +3,31 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 //import { div } from "framer-motion/client";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false)
-
+ const [blurState, setBlurState] = useState<boolean>(true);
 useEffect(()=> {
   const ScrollDetection=()=> {
     if((pathname ==="/" || pathname === "/#About")){
     setIsScrolled( window?.innerWidth > 800 ? window?.scrollY > 800 :
  window?.innerWidth <=600  ? window?.scrollY > 500 : false)
     }
+    setBlurState(window?.innerWidth <= 600 ? window?.scrollY <= 50 : window?.innerWidth > 800
+       ? window?.scrollY <= 150 : false )
   }
   window.addEventListener("scroll", ScrollDetection, {passive : true})
   return ()=> window.removeEventListener("scroll", ScrollDetection)
 })
+console.log(blurState);
 
-  const navTheme = isScrolled  ? "bg-[#1853AD]"  : isScrolled === false
-   && (pathname !=="/" &&pathname !== "/#About")? "bg-[#1853AD]"
-   : "backdrop-blur-lg";
+  const navTheme = isScrolled && window?.scrollY > 200  ? "bg-[#1853AD]"  : isScrolled === false
+   && (pathname !=="/" && pathname !== "/#About")? "bg-[#1853AD]"
+   : isScrolled === false && blurState ? "bg-transparent" : "backdrop-blur-lg";
  
   const Navigation = [
     {id : 1, nav :  "Home", link : "/"}, 
@@ -52,14 +56,16 @@ useEffect(()=> {
     
         <Link
           href="/"
-          className={`text-lg font-bold ${isScrolled ? "text-white" : "text-black"} md:text-[#F7FFF6]`}
+          className={`flex items-center gap-2`}
          // style={{ color: "#F7FFF6" }}
         >
-          FINSA
+          <Image className="rounded-full" alt="logo" src={"/logo.png"} width={50} height={50}/>
+        <p  className={`text-lg font-bold ${isScrolled ? "text-white" : "text-black"}
+           md:text-[#F7FFF6]`}>FINSA</p>  
         </Link>
 
         {/* Desktop Menu */}
-        <div className={`hidden  lg:flex items-center gap-8 `}>
+        <div className={`hidden  lg:flex items-center gap-8 back `}>
           {Navigation.map(
             (item, index) => (
               <Link
