@@ -44,7 +44,7 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
               className="group w-full bg-white border border-slate-200 p-5 md:p-6 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:border-[#1853ad] hover:shadow-xl transition-all duration-300 relative overflow-hidden"
             >
               {/* "New" or "Urgent" Indicator */}
-              <div className={`absolute left-0 top-0 bottom-0 w-1 ${op.status === 'New' ? 'bg-[#0c95d9]' : 'bg-[#b24a53]'}`} />
+              <div className={`absolute left-0 top-0 bottom-0 w-1 ${op.type_badge === 'New' ? 'bg-[#0c95d9]' : 'bg-[#b24a53]'}`} />
 
               <div className="flex flex-col md:flex-row items-center gap-6 w-full">
                 <div className="flex-shrink-0 text-center md:text-left">
