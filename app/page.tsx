@@ -24,8 +24,8 @@ export default function LandingPage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'FINSA',
-    'url': 'https://yourfinsa-unilag.com',
-    'logo': 'https://yourfinsa-unilag.com/logo.png', // Path to your public brand asset
+    'url': 'https://finsa-unilag.com',
+    'logo': 'https://finsa-unilag.com/logo.png', // Path to your public brand asset
     'description':"FINSA is a student-led organization at the University of Lagos dedicated to fostering financial literacy, professional development, and networking opportunities for students interested in finance and related fields. We aim to empower our members with the knowledge and skills needed to excel in the financial industry through workshops, seminars, mentorship programs, and collaborative projects.",
     'founder': {
       '@type': 'Group',
