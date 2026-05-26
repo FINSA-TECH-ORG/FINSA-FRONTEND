@@ -23,7 +23,7 @@ useEffect(()=> {
   window.addEventListener("scroll", ScrollDetection, {passive : true})
   return ()=> window.removeEventListener("scroll", ScrollDetection)
 })
-console.log(blurState);
+
 
   const navTheme = isScrolled && window?.scrollY > 200  ? "bg-[#1853AD]"  : isScrolled === false
    && (pathname !=="/" && pathname !== "/#About")? "bg-[#1853AD]"

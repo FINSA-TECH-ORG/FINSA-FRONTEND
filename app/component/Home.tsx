@@ -1,3 +1,4 @@
+  "use client"
   import FINSAGroup from "../../public/FINSAGroup.jpg";
 import FinsaMobileImage from "../../public/FinsaMobileImage.jpg"
 import { motion } from "framer-motion";
