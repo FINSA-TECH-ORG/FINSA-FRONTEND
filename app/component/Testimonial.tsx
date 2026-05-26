@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import { testimonials } from '../assets/TestimonialAssets';
@@ -54,7 +55,7 @@ export const TestimonialSection: React.FC = () => {
         {/* Final CTA before Footer */}
         <div className="mt-20 text-center border-t border-gray-100 pt-20">
           <h3 className="text-2xl font-bold text-[#1853ad] mb-4">Be part of the story.</h3>
-          <p className="text-[#6c788e] mb-8">Whether you are an aspiring financier or a corporate partner, let's build the future together.</p>
+          <p className="text-[#6c788e] mb-8">Whether you are an aspiring financier or a corporate partner, {"let's"} build the future together.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="bg-[#1853ad] text-white px-10 py-4 rounded-full font-bold hover:bg-[#0c95d9] transition-all">
               Join the Association
