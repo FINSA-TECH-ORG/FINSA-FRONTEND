@@ -21,7 +21,7 @@ export const metaData : Metadata = {
 export default function LandingPage() {
 // ───────── PART 2: STRUCTURED BRAND DATA (For Google's Algorithm) ─────────
   const organizationSchema = {
-    '@context': 'https://schema.org',
+    '@context': 'https://schema.org/Organization',
     '@type': 'Organization',
     'name': 'FINSA',
     'url': 'https://finsa-unilag.com',
