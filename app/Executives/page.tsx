@@ -34,7 +34,7 @@ const executives = [
     id: 5,
     role: "Financial Secretary",
     name: "Oderinde A. Aisha",
-    bio: "As the primary accountant, Aishat records every source of incoming revenue, including member dues and corporate sponsorships, while verifying and authorizing all outgoing project expenses. Working closely with the President and the executive cabinet, this role drafts comprehensive budget allocations for major events and prepares detailed financial reports to present to university authorities and stakeholders. Additionally, She manages risk by keeping spending aligned with the association's capital limits, ensuring the treasury remains stable and fully capable of funding every planned initiative throughout the tenure.",
+    bio: "Ashabi serves as the Financial Secretary, playing a vital role in managing the organization’s financial activities with transparency, accountability, and efficiency. She is responsible for keeping accurate financial records, coordinating budgets, monitoring expenditures, and ensuring proper documentation of all financial transactions. Through her dedication and attention to detail, she supports effective planning and smooth execution of programs and activities within the association.",
     image: "/FinSec.jpg"
   },
   {

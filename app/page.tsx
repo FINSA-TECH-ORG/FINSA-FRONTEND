@@ -9,12 +9,12 @@ import { About } from "./component/About";
 import { Metadata } from "next";
 
 export const metaData : Metadata = {
-  metadataBase : new URL("https:finsa-unilag.com"),
+  metadataBase : new URL("https://finsa-unilag.com"),
 
   title : "FINSA - The Finance Student Association | UNILAG",
   description : "FINSA is a student-led organization at the University of Lagos dedicated to fostering financial literacy, professional development, and networking opportunities for students interested in finance and related fields. We aim to empower our members with the knowledge and skills needed to excel in the financial industry through workshops, seminars, mentorship programs, and collaborative projects.",
   alternates : {
-    canonical : "https:finsa-unilag.com"
+    canonical : "https://finsa-unilag.com"
   }
 }
 
