@@ -1,4 +1,4 @@
-"use client"
+
 import Home from "./component/Home";
 import { SponsorSection } from "./component/SponsorShip";
 import { MentorshipSection } from "./component/Mentorship";
