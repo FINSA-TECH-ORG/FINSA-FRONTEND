@@ -1,26 +1,26 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState,  } from 'react';
 import {announcements} from "../assets/Announcement";
-import { getAnnouncements } from '@app/lib/Finsa';
-import { Announcement } from '@app/lib/libTypes';
+// import { getAnnouncements } from '@app/lib/Finsa';
+// import { Announcement } from '@app/lib/libTypes';
 const AnnouncementChannel = () => {
   const [activeNews, setActiveNews] = useState<any>(null);
-  const [announcementData, setAnnouncementData] = useState<Announcement[]>([]);
-   const FetchOpp = async()=> {
-    try {
-    const response =  await getAnnouncements()
-     setAnnouncementData(response)
-    }catch(err){
-      throw new Error("Error Occuring the")
-    }
-  //console.log(response)
-   }
-   useEffect(()=> {
-    const callBack = async()=> {
-    FetchOpp()
-    }
-    callBack()
-   },[])
+  // const [announcementData, setAnnouncementData] = useState<Announcement[]>([]);
+  //  const FetchOpp = async()=> {
+  //   try {
+  //   const response =  await getAnnouncements()
+  //    setAnnouncementData(response)
+  //   }catch(err){
+  //     throw new Error("Error Occuring the")
+  //   }
+  // //console.log(response)
+  //  }
+  //  useEffect(()=> {
+  //   const callBack = async()=> {
+  //   FetchOpp()
+  //   }
+  //   callBack()
+  //  },[])
 
   return (
     <section className="bg-white py-20 px-4 mt-10 min-h-screen">

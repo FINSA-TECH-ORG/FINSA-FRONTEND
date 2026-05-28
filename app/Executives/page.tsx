@@ -5,8 +5,8 @@ const executives = [
   {
     id: 1,
     role: "President",
-    name: "Hammed Tijani",
-    bio: "As the team leader, the Hammed heads the executive cabinet to keep everyone organized, motivated, and working toward the same goals. Serving as the official face of the association, he acts as the primary spokesperson when dealing with University authorities, professors, and external partners. Additionally, Hammed operates as the corporate liaison by meeting with executives, financial institutions, and guest speakers to secure sponsorships and career opportunities for students. Ultimately, he is the primary decision maker, holding full accountability for the association’s budget, strategy, and overall legacy during their tenure.",
+    name: "Hamed Tijani",
+    bio: "As the team leader, the Hamed heads the executive cabinet to keep everyone organized, motivated, and working toward the same goals. Serving as the official face of the association, he acts as the primary spokesperson when dealing with University authorities, professors, and external partners. Additionally, Hamed operates as the corporate liaison by meeting with executives, financial institutions, and guest speakers to secure sponsorships and career opportunities for students. Ultimately, he is the primary decision maker, holding full accountability for the association’s budget, strategy, and overall legacy during their tenure.",
     image: "/President.jpg"
   },
   {
@@ -89,10 +89,10 @@ const ExecutiveProfiles = () => {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Page Header */}
-        <div className="mb-32">
-          <h1 className="text-[#6c788e] text-xs font-bold tracking-[0.5em] uppercase mb-4">Leadership</h1>
+        <div className="mb-32 mt-10">
+
           <p className="text-5xl md:text-7xl font-black text-[#1853ad] italic tracking-tighter">
-            The FINSA <span className="text-[#b24a53]">Executive.</span>
+            The FINSA <span className="text-[#b24a53]">Executives.</span>
           </p>
         </div>
 

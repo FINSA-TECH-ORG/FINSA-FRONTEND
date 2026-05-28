@@ -19,8 +19,8 @@ export const eventMoments: FinsaEvent[] = [
     id: 2,
     title: "Global Finance in 2025(TFS 4.0)",
     speaker: "Big 4 Consulting Partners",
-    theme: "The Future of Audit & AI Integration",
-    stats: "2315 Attendees",
+    theme: "Global Finance: Adapting to a changing Economic Landscape",
+    stats: "2315+ Attendees",
     image: "/TFSFour.jpg"
   },
   {

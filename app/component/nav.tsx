@@ -60,8 +60,8 @@ useEffect(()=> {
          // style={{ color: "#F7FFF6" }}
         >
           <Image className="rounded-full" alt="logo" src={"/logo.png"} width={50} height={50}/>
-        <p  className={`text-lg font-bold ${isScrolled ? "text-white" : "text-black"}
-           md:text-[#F7FFF6]`}>FINSA</p>  
+        <p  className={`text-lg font-bold  ${isScrolled && (pathname === "/" || pathname === "/#About")  ? "text-white" : "text-black"}
+         ${isScrolled === false && (pathname !== "/" && pathname !== "/#About") ? "text-white" : ""}  md:text-[#F7FFF6]`}>FINSA</p>  
         </Link>
 
         {/* Desktop Menu */}
@@ -86,9 +86,9 @@ useEffect(()=> {
           onClick={() => setOpen(!open)}
           className="lg:hidden flex flex-col gap-1"
         >
-          <span className={`w-6 h-0.5 ${isScrolled ? "bg-white" : "bg-black"}`}></span>
-          <span className={`w-6 h-0.5 md:bg-white  ${isScrolled ? "bg-white" : "bg-black"}`}></span>
-          <span className={`w-6 h-0.5 md:bg-white ${isScrolled ? "bg-white" : "bg-black"}`}></span>
+          <span className={`w-6 h-0.5 ${isScrolled && (pathname === "/" || pathname === "/#About") ? "bg-white" : "bg-black"}  ${isScrolled === false && (pathname !== "/" && pathname !== "/#About") ? "bg-white" : ""}`}></span>
+          <span className={`w-6 h-0.5 md:bg-white  ${isScrolled && (pathname === "/" || pathname === "/#About") ? "bg-white" : "bg-black"}  ${isScrolled === false && (pathname !== "/" && pathname !== "/#About") ? "bg-white" : ""}`}></span>
+          <span className={`w-6 h-0.5 md:bg-white ${isScrolled && (pathname === "/" || pathname === "/#About") ? "bg-white" : "bg-black"}  ${isScrolled === false && (pathname !== "/" && pathname !== "/#About") ? "bg-white" : ""}`}></span>
         </button>
       </div>
 

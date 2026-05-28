@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import PartnerModal from './PartnerModal';
 export const Footer= () => {
   return (
       <footer
@@ -99,21 +100,12 @@ export const Footer= () => {
             <p
               className="text-sm mb-4"
               style={{ color: "#F7FFF6" }}
-            >
+            >  
               Collaborate with FINSA to connect with high-potential
               finance undergraduates and future professionals.
             </p>
 
-            <Link
-              href="#"
-              className="inline-block px-5 py-2 rounded-md text-sm font-semibold"
-              style={{
-                backgroundColor: "#B24A53",
-                color: "#FFFFFF"
-              }}
-            >
-              Partner With Us
-            </Link>
+          <PartnerModal/>
           </div>
 
         </div>

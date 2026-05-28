@@ -1,48 +1,51 @@
 "use client";
 
-import  { useEffect, useState } from 'react';
-import { opportunities } from '../assets/internship&scholarship';
-import { getOpportunities } from '@app/lib/Finsa';
+import  {  useState } from 'react';
+// import { opportunities } from '../assets/internship&scholarship';
+// import { getOpportunities } from '@app/lib/Finsa';
 import { Opportunity } from '@app/lib/libTypes';
 
+import EmptyInternships from './NoInternshipState';
 const InternshipHub = () => {
   const [selectedOp, setSelectedOp] = useState<any>(null);
 const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([]);
- const FetchOpp = async()=> {
-  try {
-  const response =  await getOpportunities()
-   setInternOpportunites(response)
-  }catch(err){
-    throw new Error("Error Occuring the")
-  }
+//  const FetchOpp = async()=> {
+//   try {
+//   const response =  await getOpportunities()
+//    setInternOpportunites(response)
+//   }catch(err){
+//     throw new Error("Error Occuring the")
+//   }
 //console.log(response)
- }
- useEffect(()=> {
-  const callBack = async()=> {
-  FetchOpp()
-  }
-  callBack()
- },[])
+ //}
+//  useEffect(()=> {
+//   const callBack = async()=> {
+//   FetchOpp()
+//   }
+//   callBack()
+//  },[])
 
   return (
     <section className="bg-[#f7f7f6] py-24 px-6 min-h-screen">
       <div className="max-w-4xl mx-auto"> {/* Centered on Large Screens */}
         
         {/* Header */}
-        <div className="mb-12 text-center md:text-left">
-          <h2 className="text-[#6c788e] text-xs font-bold tracking-[0.5em] uppercase mb-4">Live Feed</h2>
+        <div className="mb-12 text-center md:text-left my-8">
           <p className="text-4xl font-black text-[#1853ad] italic tracking-tighter">
             Internships & <span className="text-[#b24a53]">Openings.</span>
           </p>
         </div>
  {/* The Update Bar List */}
         <div className="space-y-4">
-          {internOpportunities.map((op) => (
+          {internOpportunities?.length > 0 ? (
+          internOpportunities.map((op) => (
             <div 
               key={op.id}
               onClick={() => setSelectedOp(op)}
-              className="group w-full bg-white border border-slate-200 p-5 md:p-6 flex flex-col md:flex-row items-center justify-between cursor-pointer hover:border-[#1853ad] hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-            >
+              className="group w-full bg-white border border-slate-200
+               p-5 md:p-6 flex flex-col md:flex-row items-center justify-between 
+               cursor-pointer hover:border-[#1853ad] hover:shadow-xl transition-all
+                duration-300 relative overflow-hidden">
               {/* "New" or "Urgent" Indicator */}
               <div className={`absolute left-0 top-0 bottom-0 w-1 ${op.type_badge === 'New' ? 'bg-[#0c95d9]' : 'bg-[#b24a53]'}`} />
 
@@ -69,7 +72,9 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
                 <span className="text-[#0c95d9] group-hover:translate-x-2 transition-transform inline-block">→</span>
               </div>
             </div>
-          ))}
+          ))): (
+             <EmptyInternships/>
+          )}
         </div>
       </div>
 

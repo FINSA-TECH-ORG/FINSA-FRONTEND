@@ -7,7 +7,7 @@ import Navbar from "./nav";
 
 
 export default function Home() {
-   const headline = "Developing Future-Ready Finance Leaders";
+
 
   
 return(

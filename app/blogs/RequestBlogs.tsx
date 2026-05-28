@@ -50,10 +50,11 @@ const posts = blogData
                   /> */}
 
                        <Image 
+                       objectFit="cover"
                     src={blog?.cover_image} 
                     alt={blog.title} 
                     fill 
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm">
                 NEW
@@ -64,7 +65,8 @@ const posts = blogData
                 <div className="p-10 flex-grow flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date?.slice(0, 10) : ""}</span>
+                      {/* <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date?.slice(0, 10) : ""}</span> */}
+                                  <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date : ""}</span>
                       <span className="h-1 w-1 bg-slate-300 rounded-full" />
                       <span className="text-[#6c788e] text-[10px] font-bold uppercase tracking-widest">By {blog.author}</span>
                     </div>

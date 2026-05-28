@@ -21,48 +21,58 @@ export const About = () => {
         {/* The Three-Carded Panel */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-2xl">
           
-          {/* Mission Card */}
-          <div className="group relative p-12 md:p-16 min-h-[500px] flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-100 hover:bg-slate-50 transition-all duration-500">
-            <div className="absolute top-0 left-0 h-2 w-0 group-hover:w-full bg-[#1853ad] transition-all duration-700" />
-            <div>
-              <h3 className="text-[#1853ad] text-3xl font-black uppercase italic tracking-tighter mb-8">Mission</h3>
-              <p className="text-[#6c788e] text-xl leading-relaxed">
-                To transform students into elite financial professionals through rigorous technical training in 
-                <span className="text-[#1853ad] font-semibold"> financial modeling, FP&A, and data analytics</span>. 
-                We ensure every member is day-one ready for the global markets.
-              </p>
-            </div>
-            <div className="text-[10px] font-bold tracking-widest text-[#1853ad]/40 uppercase italic">Pillar One: Current Duty</div>
-          </div>
 
-          {/* Vision Card */}
-          <div className="group relative p-12 md:p-16 min-h-[500px] flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-100 hover:bg-slate-50 transition-all duration-500">
-            <div className="absolute top-0 left-0 h-2 w-0 group-hover:w-full bg-[#b24a53] transition-all duration-700" />
-            <div>
-              <h3 className="text-[#b24a53] text-3xl font-black uppercase italic tracking-tighter mb-8">Vision</h3>
-              <p className="text-[#6c788e] text-xl leading-relaxed">
-                To serve as the primary <span className="text-[#b24a53] font-semibold">global gateway</span> for 
-                Nigerian finance talent, creating a future where our scholars lead the most influential 
-                financial institutions in the world.
-              </p>
-            </div>
-            <div className="text-[10px] font-bold tracking-widest text-[#b24a53]/40 uppercase italic">Pillar Two: Horizon</div>
-          </div>
 
-          {/* History Card */}
+                 {/* History Card */}
           <div className="group relative p-12 md:p-16 min-h-[500px] flex flex-col justify-between hover:bg-slate-50 transition-all duration-500">
             <div className="absolute top-0 left-0 h-2 w-0 group-hover:w-full bg-[#0c95d9] transition-all duration-700" />
             <div>
-              <h3 className="text-[#0c95d9] text-3xl font-black uppercase italic tracking-tighter mb-8">History</h3>
+              <h3 className="text-[#0c95d9] text-3xl font-black uppercase italic tracking-tighter mb-8"> About Us</h3>
               <p className="text-[#6c788e] text-xl leading-relaxed">
-                Born out of the need for specialized coordination, FINSA has evolved from a local association 
-                into a <span className="text-[#0c95d9] font-semibold">technical powerhouse</span>. Our legacy is 
-                marked by constant, impeccable growth intervals.
+              The Finance Students’ Association (FINSA) is the ocial
+student body of the Department of Finance at the
+University of Lagos. We are committed to shaping future
+finance professionals by providing opportunities that
+bridge the gap between academic knowledge and realworld applications. With a vibrant membership of nearly
+1,000 students, FINSA oers a dynamic platform where
+members engage in specialized training, mentorship, and
+networking opportunities. 
               </p>
            
             </div>
             <div className="text-[10px] font-bold tracking-widest text-[#0c95d9]/40 uppercase italic">Pillar Three: Legacy</div>
           </div>
+          {/* Mission Card */}
+          <div className="group relative p-12 md:p-16 min-h-[500px] flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-100 hover:bg-slate-50 transition-all duration-500">
+            <div className="absolute top-0 left-0 h-2 w-0 group-hover:w-full bg-[#b24a53]  transition-all duration-700" />
+            <div>
+              <h3 className="text-[#b24a53]  text-3xl font-black uppercase italic tracking-tighter mb-8">Mission</h3>
+              <p className="text-[#6c788e] text-xl leading-relaxed">
+                To provide high-quality finance education that develops
+students into well-rounded professionals, equipped with
+the expertise and critical thinking skills needed to excel in
+the fast-paced and evolving globalfinance industry.
+              </p>
+            </div>
+            <div className="text-[10px] font-bold tracking-widest text-[#1853ad]/40 uppercase italic">Pillar One: Current Duty</div>
+          </div>
+
+
+          {/* Vision Card */}
+          <div className="group relative p-12 md:p-16 min-h-[500px] flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-100 hover:bg-slate-50 transition-all duration-500">
+            <div className="absolute top-0 left-0 h-2 w-0 group-hover:w-full bg-[#1853ad] transition-all duration-700" />
+            <div>
+              <h3 className="text-[#1853ad] text-3xl font-black uppercase italic tracking-tighter mb-8">Vision</h3>
+              <p className="text-[#6c788e] text-xl leading-relaxed">
+               To be the leading student organization in Nigeria, shaping
+the next generation of finance leaders through innovative
+learning and strong industry collaboration.
+              </p>
+            </div>
+            <div className="text-[10px] font-bold tracking-widest text-[#b24a53]/40 uppercase italic">Pillar Two: Horizon</div>
+          </div>
+
+   
 
         </div>
       </div>

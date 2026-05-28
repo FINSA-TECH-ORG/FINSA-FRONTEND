@@ -33,7 +33,9 @@ export const TestimonialSection: React.FC = () => {
 
               {/* User Info */}
               <div className="flex items-center gap-4 border-t border-gray-200 pt-6">
+                                  {item?.image && (
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#1853ad]">
+
                   <Image 
                     src={item.image} 
                     alt={item.name} 
@@ -41,6 +43,7 @@ export const TestimonialSection: React.FC = () => {
                     className="object-cover"
                   />
                 </div>
+                                  )}
                 <div>
                   <h4 className="text-[#1853ad] font-bold text-sm uppercase">{item.name}</h4>
                   <p className="text-[#6c788e] text-xs font-medium">
