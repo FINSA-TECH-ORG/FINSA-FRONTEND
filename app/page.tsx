@@ -8,36 +8,41 @@ import { TestimonialSection } from "./component/Testimonial";
 import { About } from "./component/About";
 import { Metadata } from "next";
 
-export const metaData : Metadata = {
-  metadataBase : new URL("https://finsa-unilag.com"),
-  title : "FINSA - The Finance Student Association | UNILAG",
-  description : "FINSA is a student-led organization at the University of Lagos dedicated to fostering financial literacy, professional development, and networking opportunities for students interested in finance and related fields. We aim to empower our members with the knowledge and skills needed to excel in the financial industry through workshops, seminars, mentorship programs, and collaborative projects.",
-  alternates : {
-    canonical : "https://finsa-unilag.com"
+export const metadata: Metadata = {
+  metadataBase: new URL("https://finsa-unilag.com"),
+  title: "FINSA - The Finance Student Association | UNILAG",
+  description: "FINSA is a student-led organization at the University of Lagos dedicated to fostering financial literacy, professional development, and networking opportunities for students interested in finance and related fields.",
+  alternates: {
+    canonical: "https://finsa-unilag.com"
+  },
+  // Bonus: Explicitly tell search engines where your favicon/icon image points
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
   }
-}
+};
 
 export default function LandingPage() {
-// ───────── PART 2: STRUCTURED BRAND DATA (For Google's Algorithm) ─────────
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'FINSA',
     'url': 'https://finsa-unilag.com',
-    'logo': 'https://finsa-unilag.com/logo.png', // Path to your public brand asset
-    'description':"FINSA is a student-led organization at the University of Lagos dedicated to fostering financial literacy, professional development, and networking opportunities for students interested in finance and related fields. We aim to empower our members with the knowledge and skills needed to excel in the financial industry through workshops, seminars, mentorship programs, and collaborative projects. | #finsaUnilag | #finsa Unilag | #Finsa Unilag | #FinsaUnilag",
-     "sameAs" : [
-         "https://www.instagram.com/finsa_unilag/",
-         "https://www.linkedin.com/in/finsa-unilag-bb871035a/",
-         "https://www.youtube.com/@FINSAUNILAG",
-         "https://x.com/finsa_unilag"
-     ],
-   'parentOrganization': {
-      '@type': 'College | University',
+    // Ensure this absolute path points to a valid 1:1 aspect ratio square PNG image file
+    'logo': 'https://finsa-unilag.com/logo.png', 
+    'description': "FINSA is a student-led organization at the University of Lagos dedicated to fostering financial literacy, professional development, and networking opportunities for students interested in finance.",
+    'sameAs': [
+      "https://www.instagram.com/finsa_unilag/",
+      "https://www.linkedin.com/in/finsa-unilag-bb871035a/",
+      "https://www.youtube.com/@FINSAUNILAG",
+      "https://x.com/finsa_unilag"
+    ],
+    // FIX 2: Corrected to valid schema.org standard nomenclature mapping
+    'parentOrganization': {
+      '@type': 'EducationalOrganization',
       'name': 'University of Lagos'
     }
   };
-
   return (
    <section>
     <script type="application/ld+json"
