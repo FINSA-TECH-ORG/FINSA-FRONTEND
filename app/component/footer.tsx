@@ -149,20 +149,18 @@ export const Footer= () => {
         />
 
         {/* Bottom Section */}
-        <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-6 w-full flex flex-col md:flex-row justify-between items-center gap-4">
 
           <p
-            className="text-xs"
+            className="text-xs md:w-1/3 w-full"
             style={{ color: "#F7FFF6" }}
           >
             © {new Date().getFullYear()} FINSA — Finance Student Association, University of Lagos.
           </p>
 
-           <a href="#" className="w-full flex justify-left md:justify-center ">
-            <Image src={"/Trademark.png"} alt="" width={100} height={100} />
-          </a>
+        
 
-        <div className="flex items-center gap-4">
+        <div className="flex md:w-1/3 w-full items-center justify-left md:justify-right gap-4">
           {socialLinks.map((social) => (
             <a
               key={social.name}
@@ -182,6 +180,9 @@ export const Footer= () => {
             </a>
           ))}
         </div>
+          <a  href="#" className="md:w-1/3 w-full flex justify-left md:justify-center ">
+            <Image src={"/Trademark.png"} alt="" width={100} height={100} />
+          </a>
 
         </div>
 
