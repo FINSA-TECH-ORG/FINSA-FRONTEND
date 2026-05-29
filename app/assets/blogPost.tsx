@@ -18,7 +18,7 @@ export const blogData: BlogType[] = [
     id: 2,
     title: "Africa’s Financial Renaissance: Inside FINSA’s Finance Symposium 5.0",
     author: "Hamed Tijani",
-    summary : "Commissioner for Finance, GCEO of Anchoria Capital Group, CFA Governor, others to speak at UNILAG's student-led conference; The Finance Symposium 5.0",
+    summary : "Commissioner for Finance, GMD of Anchoria Capital Group, CFA Governor, others to speak at UNILAG's student-led conference; The Finance Symposium 5.0",
     slug : "Insights",
     content: `The Finance Students Association of the University of Lagos (FINSA) is bringing back one of Nigeria's most recognised student-led finance events.
      The Finance Symposium 5.0 is scheduled to be held on June 9, 2026, at the J.F. Ade Ajayi Auditorium, University of Lagos.
