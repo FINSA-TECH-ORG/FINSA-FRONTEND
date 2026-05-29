@@ -17,7 +17,7 @@ return(
       <div className="absolute top-0  inset-0">
         <Image
           src={FINSAGroup}
-          alt="FINSA Institutional"
+         alt="FINSA UNILAG Executive Committee and Students at the Finance Symposium"
           className="w-full h-full  md:object-cover hidden md:block"
         />
        
@@ -32,7 +32,7 @@ return(
         
         <Image
           src={FinsaMobileImage}
-          alt="FINSA Institutional"
+          alt="FINSA UNILAG Executive Committee and Students at the Finance Symposium"
           className="w-full h-full object-contain md:hidden flex"
         />
     
