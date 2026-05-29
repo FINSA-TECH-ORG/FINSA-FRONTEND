@@ -42,7 +42,7 @@ export default function LandingPage() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'FINSA',
+    'name': 'FINSA UNILAG',
     'url': 'https://finsa-unilag.com',
     // Ensure this absolute path points to a valid 1:1 aspect ratio square PNG image file
     'logo': 'https://finsa-unilag.com/logo.png', 
