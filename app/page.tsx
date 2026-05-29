@@ -15,6 +15,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://finsa-unilag.com"
   },
+  openGraph: {
+    title: "FINSA - The Finance Student Association | UNILAG",
+    description: "Fostering financial literacy and professional development at the University of Lagos.",
+    url: "https://finsa-unilag.com",
+    siteName: "FINSA UNILAG",
+    images: [
+      {
+        url: "/finsaLogo.png", 
+        width: 1200,
+        height: 630,
+        alt: "FINSA UNILAG",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
   // Bonus: Explicitly tell search engines where your favicon/icon image points
   icons: {
     icon: '/logo.png',
