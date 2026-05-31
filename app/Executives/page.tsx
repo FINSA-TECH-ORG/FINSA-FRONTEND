@@ -1,6 +1,6 @@
-
+"use client"
 import Image from 'next/image';
-
+import {useState, useEffect} from "react";
 import { Executive } from '@app/lib/libTypes';
 import { getExecutives } from '@app/lib/Finsa';
 import { div } from 'framer-motion/client';
@@ -79,27 +79,27 @@ const executives = [
   }
 ];
 
-export default async function  ExecutiveProfiles() {
+const ExecutiveProfiles=()=> {
+const [executivesData, setExecutivesData] = useState<Executive[]>([]) 
 
+  const fetchExecutives = async()=> {
+    try{
+   const response = await getExecutives();
+      setExecutivesData(response)
+    }catch(err){
+      throw new Error("Could Fetch the executives data..")
+    }
+  }
 
-  // const fetchExecutives = async()=> {
-  //   try{
-  //  const response = await getExecutives();
-  //     setExecutivesData(response)
-  //   }catch(err){
-  //     throw new Error("Could Fetch the executives data..")
-  //   }
-  // }
+  useEffect(()=> {
+  const callBack =async()=> {
+   await fetchExecutives()
+  }
+  callBack()
+  },[])
 
-  // useEffect(()=> {
-  // const callBack =async()=> {
-  //  await fetchExecutives()
-  // }
-  // callBack()
-  // },[])
-
-  const executivesData = await  getExecutives()
-  console.log(executivesData)
+  //const executivesData = await  getExecutives()
+  //console.log(executivesData)
   return (
     <section className="bg-[#f7f7f6] py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -166,4 +166,4 @@ export default async function  ExecutiveProfiles() {
     </section>
   );
 };
-
+export default ExecutiveProfiles;
