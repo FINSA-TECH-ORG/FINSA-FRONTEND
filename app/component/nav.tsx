@@ -59,7 +59,7 @@ useEffect(()=> {
           className={`flex items-center gap-2`}
          // style={{ color: "#F7FFF6" }}
         >
-          <Image className="rounded-full" alt="logo" src={"/logo.png"} width={50} height={50}/>
+          <Image className="rounded-full" alt="logo" src={"/finsaLogo.png"} width={50} height={50}/>
         <p  className={`text-lg font-bold  ${isScrolled && (pathname === "/" || pathname === "/#About")  ? "text-white" : "text-black"}
          ${isScrolled === false && (pathname !== "/" && pathname !== "/#About") ? "text-white" : ""}  md:text-[#F7FFF6]`}>FINSA</p>  
         </Link>

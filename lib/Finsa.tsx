@@ -18,10 +18,10 @@ import { Schema, HomepageHero, Executive, Blog, Opportunity, Announcement, Conta
 // ── Configuration ──────────────────────────────────────────────
 const DIRECTUS_URL =
     process.env.DIRECTUS_URL ||
-    process.env.NEXT_PUBLIC_DIRECTUS_URL ||
+    `${process.env.NEXT_PUBLIC_DIRECTUS_URL}` ||
     "http://localhost:8055";
 
-const TIMEOUT_MS = 3_000;
+const TIMEOUT_MS = 5_000;
 
 // ── Client setup ───────────────────────────────────────────────
 // Pass the Schema here to enable library-wide type safety

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getBlogs } from "@app/lib/Finsa";
 import Link from "next/link";
-import { blogData } from "../assets/blogPost";
+//import { blogData } from "../assets/blogPost";
 
-const baseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL
+const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 
 type BlogType = {
   id : number
@@ -20,13 +20,14 @@ type BlogType = {
 export default async function RequestBlogs({searchParam} : {searchParam : string}) {
 
 
-    // const posts = await getBlogs(searchParam, 10);
-const posts = blogData
-  // const filteredBlogs = posts.filter((blog) =>(
-  //     blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  //     blog.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  //    blog.summary.toLowerCase().includes(searchQuery.toLowerCase())
-  //   ))
+    const posts = await getBlogs(searchParam, 10);
+    //console.log(posts)
+//const posts = blogData
+//    const filteredBlogs = posts.filter((blog) =>(
+//      blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//      blog.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//  blog.summary.toLowerCase().includes(searchQuery.toLowerCase())
+//     ))
 
 
   return (
@@ -42,20 +43,20 @@ const posts = blogData
               >
                 {/* Image Section */}
                 <div className="relative h-64 w-full overflow-hidden">
-                  {/* <Image 
+                  <Image 
                     src={`${baseUrl}/assets/${blog?.cover_image}`} 
                     alt={blog.title} 
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  /> */}
+                  />
 
-                       <Image 
+                       {/* <Image 
                        objectFit="cover"
                     src={blog?.cover_image} 
                     alt={blog.title} 
                     fill 
                     className="w-full group-hover:scale-110 transition-transform duration-700"
-                  />
+                  /> */}
                   <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full shadow-sm">
                 NEW
                   </div>
@@ -65,8 +66,8 @@ const posts = blogData
                 <div className="p-10 flex-grow flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-4">
-                      {/* <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date?.slice(0, 10) : ""}</span> */}
-                                  <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date : ""}</span>
+                      <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date?.slice(0, 10) : ""}</span>
+                                  {/* <span className="text-[#b24a53] text-[10px] font-black uppercase tracking-widest">{blog.publish_date ? blog?.publish_date : ""}</span> */}
                       <span className="h-1 w-1 bg-slate-300 rounded-full" />
                       <span className="text-[#6c788e] text-[10px] font-bold uppercase tracking-widest">By {blog.author}</span>
                     </div>
@@ -90,7 +91,7 @@ const posts = blogData
           </div>
         ) : (
           <div className="text-center py-32 border-2 border-dashed border-slate-100 rounded-[3rem]">
-            {/* <p className="text-slate-400 font-medium italic text-xl">{`No insights found matching "${searchQuery}" `}</p> */}
+            <p className="text-slate-400 font-medium italic text-xl">{`No insights found matching "${searchParam}" `}</p>
           </div>
         )}
       

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogsBySlug } from '@app/lib/Finsa'; // Adjust import based on your architecture
-import { blogData } from '@app/app/assets/blogPost';
+//import { blogData } from '@app/app/assets/blogPost';
 export type BlogType = {
   id: number;
   author: string;
@@ -25,26 +25,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   //console.log(slug)
   // Fetching single blog post from Directus using your SDK helper
-  //const rawBlog = await getBlogsBySlug(slug);
-const blog = blogData?.find((item)=> item?.slug === slug) || {
-  id: 0,
-  author: "",
-  title: "",
-  slug: "",
-  publish_date: "",
-  summary: "",
-  cover_image: "",
-  content: "",
-  link : ""
-}
-  // if (!rawBlog) {
-  //   notFound();
-  // }
+  const rawBlog = await getBlogsBySlug(slug);
+// const blog = blogData?.find((item)=> item?.slug === slug) || {
+//   id: 0,
+//   author: "",
+//   title: "",
+//   slug: "",
+//   publish_date: "",
+//   summary: "",
+//   cover_image: "",
+//   content: "",
+//   link : ""
+// }
+  if (!rawBlog) {
+    notFound();
+  }
 
   // Explicit type matching for your custom structure
- //// const passedData = rawBlog as unknown as BlogType[];
- //const blog = passedData[0];
- // const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
+  const passedData = rawBlog as unknown as BlogType[];
+ const blog = passedData[0];
+  const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
 //console.log(blog?.cover_image);
   return (
     <main className="min-h-screen bg-white pt-36 pb-32 px-6">
@@ -84,22 +84,22 @@ const blog = blogData?.find((item)=> item?.slug === slug) || {
         {/* Large Cinematic Banner Cover Image */}
         {blog.cover_image && (
           <div className="relative h-[300px] md:h-[480px] w-full rounded-[2.5rem] overflow-hidden mb-16 shadow-sm border border-slate-100 bg-[#f7f7f6]">
-            {/* <Image
+            <Image
               src={`${imagesBaseUrl}/assets/${blog.cover_image}`}
               alt={blog.title}
               fill
               className="object-cover"
               sizes="(max-width: 1200px) 100vw, 896px"
               priority
-            /> */}
-               <Image
+            />
+               {/* <Image
               src={`${blog.cover_image}`}
               alt={blog.title}
               fill
               className="object-cover"
               sizes="(max-width: 1200px) 100vw, 896px"
               priority
-            />
+            /> */}
           </div>
         )}
 

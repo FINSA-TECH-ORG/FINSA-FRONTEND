@@ -1,6 +1,11 @@
-"use client";
+
 import Image from 'next/image';
+
+import { Executive } from '@app/lib/libTypes';
 import { getExecutives } from '@app/lib/Finsa';
+import { div } from 'framer-motion/client';
+
+const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 const executives = [
   {
     id: 1,
@@ -74,16 +79,27 @@ const executives = [
   }
 ];
 
-const ExecutiveProfiles = () => {
+export default async function  ExecutiveProfiles() {
 
 
-  const fetchExecutives = async()=> {
-    try{
-    await getExecutives();
-    }catch(err){
-      throw new Error("Could Fetch the executives data..")
-    }
-  }
+  // const fetchExecutives = async()=> {
+  //   try{
+  //  const response = await getExecutives();
+  //     setExecutivesData(response)
+  //   }catch(err){
+  //     throw new Error("Could Fetch the executives data..")
+  //   }
+  // }
+
+  // useEffect(()=> {
+  // const callBack =async()=> {
+  //  await fetchExecutives()
+  // }
+  // callBack()
+  // },[])
+
+  const executivesData = await  getExecutives()
+  console.log(executivesData)
   return (
     <section className="bg-[#f7f7f6] py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -98,7 +114,8 @@ const ExecutiveProfiles = () => {
 
         {/* Profiles - Non-Card Layout */}
         <div className="space-y-40">
-          {executives.map((exec, index) => (
+          {executivesData.length > 0 ? (
+          executivesData.map((exec, index) => (
             <div 
               key={exec.id} 
               className={`flex flex-col md:flex-row items-center gap-12 md:gap-24 ${
@@ -110,8 +127,9 @@ const ExecutiveProfiles = () => {
                 <div className="absolute inset-0 border-[12px] border-[#1853ad] translate-x-6 translate-y-6 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500" />
                 <div className="relative w-full h-full overflow-hidden shadow-2xl">
                   <Image 
-                    src={exec.image} 
-                    alt={exec.name} 
+                    src={`${baseUrl}/assets/${exec.profile_image}
+                  `} 
+                    alt={exec.full_name} 
                     fill 
                     className="object-cover  transition-all duration-700"
                   />
@@ -125,7 +143,7 @@ const ExecutiveProfiles = () => {
                     {exec.role}
                   </span>
                   <h2 className="text-5xl md:text-6xl font-black text-[#1853ad] mt-2 mb-4 tracking-tighter">
-                    {exec.name}
+                    {exec.full_name}
                   </h2>
                   
                 </div>
@@ -137,11 +155,15 @@ const ExecutiveProfiles = () => {
                 
               </div>
             </div>
-          ))}
+          ))) : (
+  <div>
+    No Executives Data found..
+    </div>
+
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default ExecutiveProfiles;

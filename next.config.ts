@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 
 // 1. Grab your environment variable string safely
-const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://127.0.0.1:8055";
+const directusUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || ""
 
 // 2. Parse the hostname out dynamically (extracts '127.0.0.1' or 'xxxxx.ngrok-free.app')
 let dynamicHostname = '127.0.0.1';
