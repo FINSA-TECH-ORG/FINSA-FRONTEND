@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogsBySlug } from '@app/lib/Finsa'; // Adjust import based on your architecture
-//import { blogData } from '@app/app/assets/blogPost';
+
 export type BlogType = {
   id: number;
   author: string;

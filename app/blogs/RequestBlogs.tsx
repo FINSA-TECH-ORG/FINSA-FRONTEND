@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { getBlogs } from "@app/lib/Finsa";
 import Link from "next/link";
-//import { blogData } from "../assets/blogPost";
 
 const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 
