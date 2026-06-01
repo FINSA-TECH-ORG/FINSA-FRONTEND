@@ -1,29 +1,29 @@
 "use client";
 
-import  {  useState } from 'react';
+import  {  useState, useEffect } from 'react';
 // import { opportunities } from '../assets/internship&scholarship';
-// import { getOpportunities } from '@app/lib/Finsa';
+ import { getOpportunities } from '@app/lib/Finsa';
 import { Opportunity } from '@app/lib/libTypes';
 
 import EmptyInternships from './NoInternshipState';
 const InternshipHub = () => {
   const [selectedOp, setSelectedOp] = useState<any>(null);
 const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([]);
-//  const FetchOpp = async()=> {
-//   try {
-//   const response =  await getOpportunities()
-//    setInternOpportunites(response)
-//   }catch(err){
-//     throw new Error("Error Occuring the")
-//   }
+ const FetchOpp = async()=> {
+  try {
+  const response =  await getOpportunities()
+   setInternOpportunites(response)
+  }catch(err){
+    throw new Error("Error Occuring the")
+  }
 //console.log(response)
- //}
-//  useEffect(()=> {
-//   const callBack = async()=> {
-//   FetchOpp()
-//   }
-//   callBack()
-//  },[])
+ }
+ useEffect(()=> {
+  const callBack = async()=> {
+  FetchOpp()
+  }
+  callBack()
+ },[])
 
   return (
     <section className="bg-[#f7f7f6] py-24 px-6 min-h-screen">
