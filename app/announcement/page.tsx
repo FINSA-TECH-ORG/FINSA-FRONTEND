@@ -1,26 +1,29 @@
 "use client";
-import { useState,  } from 'react';
-import {announcements} from "../assets/Announcement";
-// import { getAnnouncements } from '@app/lib/Finsa';
-// import { Announcement } from '@app/lib/libTypes';
+import { useState, useEffect  } from 'react';
+ import { getAnnouncements } from '@app/lib/Finsa';
+ import { Announcement } from '@app/lib/libTypes';
 const AnnouncementChannel = () => {
   const [activeNews, setActiveNews] = useState<any>(null);
-  // const [announcementData, setAnnouncementData] = useState<Announcement[]>([]);
-  //  const FetchOpp = async()=> {
-  //   try {
-  //   const response =  await getAnnouncements()
-  //    setAnnouncementData(response)
-  //   }catch(err){
-  //     throw new Error("Error Occuring the")
-  //   }
-  // //console.log(response)
-  //  }
-  //  useEffect(()=> {
-  //   const callBack = async()=> {
-  //   FetchOpp()
-  //   }
-  //   callBack()
-  //  },[])
+  const [announcementData, setAnnouncementData] = useState<Announcement[]>([]);
+  const [isLoading, setIsLoading] = useState(false)
+   const FetchOpp = async()=> {
+    try {
+      setIsLoading(true);
+    const response =  await getAnnouncements()
+     setAnnouncementData(response)
+    }catch(err){
+      throw new Error("Error Occuring the")
+    } finally {
+      setIsLoading(false);
+    }
+  //console.log(response)
+   }
+   useEffect(()=> {
+    const callBack = async()=> {
+    FetchOpp()
+    }
+    callBack()
+   },[])
 
   return (
     <section className="bg-white py-20 px-4 mt-10 min-h-screen">
@@ -43,7 +46,8 @@ const AnnouncementChannel = () => {
 
         {/* The Update Feed */}
         <div className="space-y-3">
-          {announcements.map((news) => (
+          {announcementData?.length > 0 ? (
+            announcementData.map((news) => (
             <div 
               key={news.id}
               onClick={() => setActiveNews(news)}
@@ -52,19 +56,19 @@ const AnnouncementChannel = () => {
               {/* Rectangular Accent */}
               <div className={`w-1.5 h-12 rounded-full mr-6 ${
                 // news.badge_type === 'high' ? 'bg-[#b24a53]' : 'bg-[#0c95d9]'
-                news.priority === 'high' ? 'bg-[#b24a53]' : 'bg-[#0c95d9]'
+                news.badge_type === 'high' ? 'bg-[#b24a53]' : 'bg-[#0c95d9]'
               }`} />
 
               <div className="flex-grow">
                 <div className="flex items-center gap-3 mb-1">
                   <span className={`text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded ${
                     // news.badge_type === 'high' ? 'bg-[#b24a53]/10 text-[#b24a53]' : 'bg-[#0c95d9]/10 text-[#0c95d9]'
-                       news.priority === 'high' ? 'bg-[#b24a53]/10 text-[#b24a53]' : 'bg-[#0c95d9]/10 text-[#0c95d9]'
+                       news.badge_type === 'high' ? 'bg-[#b24a53]/10 text-[#b24a53]' : 'bg-[#0c95d9]/10 text-[#0c95d9]'
                   }`}>
                     {/* {news.badge_type} */}
-                    {news?.priority}
+                    {news?.badge_type}
                   </span>
-                  <span className="text-[#6c788e] text-[10px] font-medium uppercase tracking-tighter">{news.time}</span>
+                  <span className="text-[#6c788e] text-[10px] font-medium uppercase tracking-tighter">{news.timestamp ? news?.timestamp?.slice(0, 10) : "" }</span>
                 </div>
                 <h3 className="text-slate-900 font-bold md:text-lg group-hover:text-[#1853ad] transition-colors">
                   {news.title}
@@ -75,7 +79,19 @@ const AnnouncementChannel = () => {
                 <span className="text-[#1853ad] font-bold">Details →</span>
               </div>
             </div>
-          ))}
+          ))) : isLoading === true  ? (
+           
+                <div className="text-center py-32">
+                  <p className="text-slate-400 font-medium animate-pulse text-xl">
+                    Getting the existing announcement data.... </p>
+                </div>
+              
+          ) : (
+  <div className="text-center py-32">
+                  <p className="text-slate-400 font-medium animate-pulse text-xl">
+                 No Announcement.... </p>
+                </div>
+              )}
         </div>
       </div>
 
@@ -105,7 +121,7 @@ const AnnouncementChannel = () => {
             </div>
 
             <p className="text-[#6c788e] text-lg leading-relaxed font-medium italic mb-8">
-              {activeNews.full_message || activeNews?.summary}
+              {activeNews.full_message || ""}
             </p>
 
             <div className="flex justify-between items-center pt-6 border-t border-slate-100">
