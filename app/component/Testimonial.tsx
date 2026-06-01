@@ -2,7 +2,32 @@
 import React from 'react';
 import Image from 'next/image';
 import { testimonials } from '../assets/TestimonialAssets';
+// import { useEffect, useState } from 'react';
+// import { Testimonial } from '@app/lib/libTypes';
+// import { getTestimonial } from '@app/lib/Finsa';
 export const TestimonialSection: React.FC = () => {
+
+  // const [testimonialsData, setTestimonialsData] = useState<Testimonial[]>([]) 
+  // const [isLoading, setIsLoading] = useState(false)
+  //   const fetchTestimonials = async()=> {
+  //     try{
+  //       setIsLoading(true)
+  //    const response = await getTestimonial();
+  //       setTestimonialsData(response)
+  //     }catch(err){
+  //       throw new Error("Could Fetch the testimonials data..")
+  //     }finally{
+  //       setIsLoading(false)
+  //     }
+  //   }
+  
+  //   useEffect(()=> {
+  //   const callBack =async()=> {
+  //    await fetchTestimonials()
+  //   }
+  //   callBack()
+  //   },[])
+  
   return (
     <section className="bg-white py-24 px-6">
       <div className="max-w-7xl mx-auto">

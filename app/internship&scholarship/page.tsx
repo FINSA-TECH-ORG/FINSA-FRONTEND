@@ -4,7 +4,7 @@ import  {  useState, useEffect } from 'react';
 // import { opportunities } from '../assets/internship&scholarship';
  import { getOpportunities } from '@app/lib/Finsa';
 import { Opportunity } from '@app/lib/libTypes';
-
+import Refresh from '../component/RefreshBlogs';
 import EmptyInternships from './NoInternshipState';
 const InternshipHub = () => {
   const [selectedOp, setSelectedOp] = useState<any>(null);
@@ -24,9 +24,10 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
   }
   callBack()
  },[])
-
+//console.log(internOpportunities);
   return (
     <section className="bg-[#f7f7f6] py-24 px-6 min-h-screen">
+      <Refresh/>
       <div className="max-w-4xl mx-auto"> {/* Centered on Large Screens */}
         
         {/* Header */}

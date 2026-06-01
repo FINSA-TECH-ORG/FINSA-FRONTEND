@@ -3,7 +3,8 @@ import Image from 'next/image';
 import {useState, useEffect} from "react";
 import { Executive } from '@app/lib/libTypes';
 import { getExecutives } from '@app/lib/Finsa';
-import { div } from 'framer-motion/client';
+import Refresh from '../component/RefreshBlogs';
+import { Suspense } from 'react';
 
 const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 const executives = [
@@ -81,13 +82,16 @@ const executives = [
 
 const ExecutiveProfiles=()=> {
 const [executivesData, setExecutivesData] = useState<Executive[]>([]) 
-
+const [isLoading, setIsLoading] = useState(false)
   const fetchExecutives = async()=> {
     try{
+      setIsLoading(true)
    const response = await getExecutives();
       setExecutivesData(response)
     }catch(err){
       throw new Error("Could Fetch the executives data..")
+    }finally{
+      setIsLoading(false)
     }
   }
 
@@ -102,6 +106,7 @@ const [executivesData, setExecutivesData] = useState<Executive[]>([])
   //console.log(executivesData)
   return (
     <section className="bg-[#f7f7f6] py-24">
+      <Refresh/>
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Page Header */}
@@ -155,14 +160,23 @@ const [executivesData, setExecutivesData] = useState<Executive[]>([])
                 
               </div>
             </div>
-          ))) : (
-  <div>
-    No Executives Data found..
-    </div>
-
-          )}
+          ))) : isLoading === true ? (
+           
+                <div className="text-center py-32">
+                  <p className="text-slate-400 font-medium animate-pulse text-xl">
+                    Getting the existing executives data.... </p>
+                </div>
+              
+          ) : (
+  <div className="text-center py-32">
+                  <p className="text-slate-400 font-medium animate-pulse text-xl">
+                 No executives data.... </p>
+                </div>
+              )
+}
         </div>
       </div>
+      
     </section>
   );
 };

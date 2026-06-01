@@ -8,7 +8,7 @@ import {
     type RestClient,
 } from "@directus/sdk";
 
-import { Schema, HomepageHero, Executive, Blog, Opportunity, Announcement, ContactInquiry } from "./libTypes";
+import { Schema, Testimonial, HomepageHero, Executive, Blog, Opportunity, Announcement, ContactInquiry } from "./libTypes";
 
 
 
@@ -72,6 +72,17 @@ export async function getExecutives(): Promise<Executive[]> {
             readItems("executives", {
                 fields: ["id", "full_name", "role", "bio", "profile_image", "sort"],
                 sort: ["sort"],
+            })
+        )
+    );
+}
+
+export async function getTestimonial(): Promise<Testimonial[]> {
+    return withTimeout(
+        client.request(
+            readItems("testimonials", {
+                fields: ["id", "quote", "author_name", "author_role", "author_avatar", "sort"],
+                sort: ["id"],
             })
         )
     );

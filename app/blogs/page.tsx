@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import QueryBlogs from './QueryBlogs';
+import Refresh from '../component/RefreshBlogs';
 import RequestBlogs from './RequestBlogs';
-
 interface PageProps {
   searchParams: Promise<{
     search?: string;
@@ -19,7 +19,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         
         {/* Header Block & Client Side Input Component */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 ">
-      
+          <Refresh/>
 
           {/* Mount our client side input box */}
           <QueryBlogs />

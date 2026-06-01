@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { getBlogs } from "@app/lib/Finsa";
 import Link from "next/link";
-
 const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 
 type BlogType = {
@@ -19,7 +18,13 @@ type BlogType = {
 export default async function RequestBlogs({searchParam} : {searchParam : string}) {
 
 
-    const posts = await getBlogs(searchParam, 10);
+ 
+ const posts = await getBlogs(searchParam, 10);
+
+
+  
+
+
     //console.log(posts)
 //const posts = blogData
 //    const filteredBlogs = posts.filter((blog) =>(

@@ -64,4 +64,14 @@ export interface Schema {
     internships_opportunities: Opportunity[];
     announcements: Announcement[];
     contact_inquiries: ContactInquiry[];
+    testimonials : Testimonial[]
 }
+
+export type Testimonial = {
+    id : number;
+    quote : string;
+    author_name : string;
+    author_role : string;
+    author_avatar : string;
+    sort : number
+  }
