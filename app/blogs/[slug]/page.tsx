@@ -1,8 +1,12 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogsBySlug } from '@app/lib/Finsa'; // Adjust import based on your architecture
+import {useEffect, useState} from "react";
+import { div } from 'framer-motion/client';
 
+const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "";
 export type BlogType = {
   id: number;
   author: string;
@@ -21,22 +25,14 @@ interface BlogPostPageProps {
   }>;
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
+export const BlogPostPage =({ params }: BlogPostPageProps)=> {
+  const [blog, setBlog] = useState<BlogType>();
+  const getInfoFromParam = async()=> {
+ const { slug } = await params;
   //console.log(slug)
   // Fetching single blog post from Directus using your SDK helper
   const rawBlog = await getBlogsBySlug(slug);
-// const blog = blogData?.find((item)=> item?.slug === slug) || {
-//   id: 0,
-//   author: "",
-//   title: "",
-//   slug: "",
-//   publish_date: "",
-//   summary: "",
-//   cover_image: "",
-//   content: "",
-//   link : ""
-// }
+
   if (!rawBlog) {
     notFound();
   }
@@ -44,9 +40,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Explicit type matching for your custom structure
   const passedData = rawBlog as unknown as BlogType[];
  const blog = passedData[0];
-  const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "http://localhost:8055";
+ setBlog(blog)
+  
+}
+
+useEffect(()=> {
+  const callBack = async()=> {
+  await getInfoFromParam()
+  }
+  callBack()
+})
 //console.log(blog?.cover_image);
   return (
+    <div>
+      {blog?.id ? (
     <main className="min-h-screen bg-white pt-36 pb-32 px-6">
       <div className="max-w-4xl mx-auto">
         
@@ -145,5 +152,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       
       </div>
     </main>
+      ): (
+    <div>
+      Blog Info Not Found
+    </div>
+      )}
+    </div>
   );
 }
+export default BlogPostPage;
