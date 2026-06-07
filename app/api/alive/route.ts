@@ -6,7 +6,7 @@ export async function GET(request: Request) {
     const authHeader = request.headers.get('authorization');
 
     // 2. Gatekeeper validation block
-    if (!authHeader || authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    if (!authHeader || authHeader !== `${process.env.CRON_SECRET}`) {
       return new NextResponse(
         JSON.stringify({ error: "Access Denied: Secure Verification Failed" }),
         { status: 401, headers: { 'Content-Type': 'application/json' } }
