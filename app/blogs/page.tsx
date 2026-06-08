@@ -28,7 +28,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         {/* 2. Keying Suspense to the string forces a smooth loading state fallback over the grid when typing */}
         <Suspense key={currentSearchTerm} fallback={
           <div className="text-center py-32">
-            <p className="text-slate-400 font-medium animate-pulse text-xl">Recalculating ledger parameters...</p>
+            <p className="text-slate-400 font-medium animate-pulse text-xl">Fetching Available Blogs...</p>
           </div>
         }>
           {/* Feed parameter directly into the Server layout */}

@@ -4,7 +4,6 @@ import {useState, useEffect} from "react";
 import { Executive } from '@app/lib/libTypes';
 import { getExecutives } from '@app/lib/Finsa';
 import Refresh from '../component/RefreshBlogs';
-import { Suspense } from 'react';
 
 const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 const executives = [
@@ -160,7 +159,7 @@ const [isLoading, setIsLoading] = useState(false)
                 
               </div>
             </div>
-          ))) : isLoading === true ? (
+          ))) : isLoading === true  ? (
            
                 <div className="text-center py-32">
                   <p className="text-slate-400 font-medium animate-pulse text-xl">
