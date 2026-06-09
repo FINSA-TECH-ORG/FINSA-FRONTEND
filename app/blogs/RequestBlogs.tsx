@@ -95,7 +95,9 @@ export default async function RequestBlogs({searchParam} : {searchParam : string
           </div>
         ) : (
           <div className="text-center py-32 border-2 border-dashed border-slate-100 rounded-[3rem]">
-            <p className="text-slate-400 font-medium italic text-xl">{`No insights found matching "${searchParam}" `}</p>
+            <p className="text-slate-400 font-medium italic text-xl">
+              {`No insights found matching "${searchParam}" `}
+              </p>
           </div>
         )}
       

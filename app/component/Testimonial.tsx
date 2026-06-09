@@ -6,7 +6,11 @@ import { testimonials } from '../assets/TestimonialAssets';
 // import { Testimonial } from '@app/lib/libTypes';
 // import { getTestimonial } from '@app/lib/Finsa';
 export const TestimonialSection: React.FC = () => {
-
+const date = new Date();
+  const yearValue = date?.getFullYear()
+const email = "finsa4unilag@gmail.com"
+const subject = encodeURIComponent(`SponsorShip Proposal - FINSA ${yearValue}`)
+const composeGmailPage = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`;
   // const [testimonialsData, setTestimonialsData] = useState<Testimonial[]>([]) 
   // const [isLoading, setIsLoading] = useState(false)
   //   const fetchTestimonials = async()=> {
@@ -81,16 +85,17 @@ export const TestimonialSection: React.FC = () => {
         </div>
 
         {/* Final CTA before Footer */}
-        <div className="mt-20 text-center border-t border-gray-100 pt-20">
+        <div className="mt-20 text-center w-full border-t border-gray-100 pt-20">
           <h3 className="text-2xl font-bold text-[#1853ad] mb-4">Be part of the story.</h3>
           <p className="text-[#6c788e] mb-8">Whether you are an aspiring financier or a corporate partner, {"let's"} build the future together.</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-[#1853ad] text-white px-10 py-4 rounded-full font-bold hover:bg-[#0c95d9] transition-all">
-              Join the Association
-            </button>
-            <button className="border-2 border-[#1853ad] text-[#1853ad] px-10 py-4 rounded-full font-bold hover:bg-[#1853ad] hover:text-white transition-all">
+          <div className="flex w-full justify-center gap-4">
+          
+            <a href={composeGmailPage}   target = "_blank"
+                rel = "noopener noreferer"
+            className="border-2 md:w-1/3 w-full border-[#1853ad] text-[#1853ad] 
+            px-10 py-4 rounded-full font-bold hover:bg-[#1853ad] hover:text-white transition-all">
               Sponsor an Event
-            </button>
+            </a>
           </div>
         </div>
       </div>
