@@ -94,8 +94,7 @@ const composeGmailPage = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}
             px-10 py-4 rounded-full font-bold hover:bg-[#1853ad] hover:text-white transition-all">
               Sponsor an Event
             </a> */}
-             <Link href={"/events"}   target = "_blank"
-                rel = "noopener noreferer"
+             <Link href={"/events"}   
             className="border-2 md:w-1/3 w-full border-[#1853ad] text-[#1853ad] 
             px-10 py-4 rounded-full font-bold hover:bg-[#1853ad] hover:text-white transition-all">
               View Events
