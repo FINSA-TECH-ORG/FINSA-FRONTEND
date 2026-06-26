@@ -24,7 +24,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     tagline: "Welcome to the Vanguard of Finance",
     description: "An interactive introduction welcoming our new inductees into the department. This session outlines academic pathways, introduces peer mentorship networks, and sets the foundational benchmark for absolute excellence in the finance ecosystem.",
     linkedinText: " Welcoming the Next Generation: Relive the highlights, academic insights, and mentorship introductions from our official Freshers' Orientation ceremony.",
-    linkedinUrl: "https://linkedin.com/company/finsa-unilag",
+    linkedinUrl: "/",
     imagePath: "/fresher.avif", // Replace with your Directus asset path once uploaded
     layoutDirection: 'normal',
     styles: {
@@ -41,7 +41,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     tagline: "Bridging Classrooms with Industry Demands",
     description: "An intensive, practical workshop series designed to equip finance students with industry-relevant competencies. From financial modeling frameworks to advanced technological workflows, we empower our peers to build scalable tools for modern analysis.",
     linkedinText: " Industrial Readiness: Discover how our intensive Skill Acquisition Program is equipping students with technical workflows and modern analytics frameworks.",
-    linkedinUrl: "https://linkedin.com/company/finsa-unilag",
+    linkedinUrl: "/",
     imagePath: "/MentorDummyThree.jpg",
     layoutDirection: 'reverse', // Switches image to the right side
     styles: {
@@ -58,7 +58,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     tagline: "Synergy, Strategy, and Athletic Excellence",
     description: "Shifting gears from computational spreadsheets to athletic fields. The annual sports event fosters peer collaboration, strategic teamwork, and physical well-being through friendly track, field, and indoor competitive tournaments.",
     linkedinText: " Beyond the Classroom: Celebrating teamwork, strategic execution, and athletic synergy at the annual FINSA Sports Festival.",
-    linkedinUrl: "https://linkedin.com/company/finsa-unilag",
+    linkedinUrl: "/",
     imagePath: "/SportsFest.avif",
     layoutDirection: 'normal',
     styles: {
@@ -75,7 +75,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     tagline: "A Grand Gala Celebrating Exceptional Milestones",
     description: "The ultimate flagship gathering honoring the brilliant achievements of our outstanding students, dedicated faculty members, and supportive corporate alumni networks. A night characterized by premium network interactions, fine dining, and prestigious acknowledgments.",
     linkedinText: " A Night of Excellence: Honoring outstanding academic achievements and celebrating leadership milestones at the grand FINSA Dinner & Awards Gala.",
-    linkedinUrl: "https://linkedin.com/company/finsa-unilag",
+    linkedinUrl: "/",
     imagePath: "/Dinner.avif",
     layoutDirection: 'reverse',
     styles: {
