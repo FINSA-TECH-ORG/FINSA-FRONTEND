@@ -180,8 +180,8 @@ export const Footer= () => {
             </a>
           ))}
         </div>
-          <a  href="#" className="md:w-1/3 w-full flex justify-left md:justify-center ">
-            <Image src={"/Trademark.png"} alt="" width={100} height={100} />
+          <a  href="https://webdevconstruct.tech" className="md:w-1/3 w-full flex justify-left md:justify-center ">
+            <Image src={"/Trademark.png"} alt="WebDevConstruct Image" width={100} height={100} />
           </a>
 
         </div>

@@ -23,7 +23,7 @@ export const mentorshipData: MentorshipModule[] = [
     title: "Strategic FP&A",
     technicalFocus: "Variance Analysis & Forecasting",
     description: "Bridge the gap between accounting and strategy. Analyzing budget vs. actuals and performing sensitivity analysis for corporate decision-making.",
-    image: "/mentorDummyTwo.jpg",
+    image: "/MentorShipImage.avif",
     color: "#b24a53" // Finsa Crimson
   },
   {
@@ -39,7 +39,7 @@ export const mentorshipData: MentorshipModule[] = [
     title: "Investment Valuation",
     technicalFocus: "DCF & Comparable Company Analysis",
     description: "The art of intrinsic value. Students perform sector-specific valuations using WACC, Beta calculations, and exit multiples.",
-    image: "/MentorDummyFour.jpg",
+    image: "/TFS-45.avif",
     color: "#95595b" // Finsa Burgundy
   }
 ];

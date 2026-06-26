@@ -2,9 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { testimonials } from '../assets/TestimonialAssets';
-// import { useEffect, useState } from 'react';
-// import { Testimonial } from '@app/lib/libTypes';
-// import { getTestimonial } from '@app/lib/Finsa';
+import Link from "next/link"
 export const TestimonialSection: React.FC = () => {
 const date = new Date();
   const yearValue = date?.getFullYear()
@@ -90,12 +88,18 @@ const composeGmailPage = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}
           <p className="text-[#6c788e] mb-8">Whether you are an aspiring financier or a corporate partner, {"let's"} build the future together.</p>
           <div className="flex w-full justify-center gap-4">
           
-            <a href={composeGmailPage}   target = "_blank"
+            {/* <a href={composeGmailPage}   target = "_blank"
                 rel = "noopener noreferer"
             className="border-2 md:w-1/3 w-full border-[#1853ad] text-[#1853ad] 
             px-10 py-4 rounded-full font-bold hover:bg-[#1853ad] hover:text-white transition-all">
               Sponsor an Event
-            </a>
+            </a> */}
+             <Link href={"/events"}   target = "_blank"
+                rel = "noopener noreferer"
+            className="border-2 md:w-1/3 w-full border-[#1853ad] text-[#1853ad] 
+            px-10 py-4 rounded-full font-bold hover:bg-[#1853ad] hover:text-white transition-all">
+              View Events
+            </Link>
           </div>
         </div>
       </div>

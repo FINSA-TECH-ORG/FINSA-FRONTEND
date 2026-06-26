@@ -33,8 +33,8 @@ export const About = () => {
 student body of the Department of Finance at the
 University of Lagos. We are committed to shaping future
 finance professionals by providing opportunities that
-bridge the gap between academic knowledge and realworld applications. With a vibrant membership of nearly
-1,000 students, FINSA oers a dynamic platform where
+bridge the gap between academic knowledge and real world applications. With a vibrant membership of nearly
+1,000 students, FINSA offers a dynamic platform where
 members engage in specialized training, mentorship, and
 networking opportunities. 
               </p>

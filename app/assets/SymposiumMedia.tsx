@@ -11,9 +11,9 @@ export const eventMoments: FinsaEvent[] = [
     {
     id: 1,
     title: "Unlocking Potentials For Growth.",
-    speaker: "To be revealed",
+    speaker: "Commissioner for Finance, GMD of Anchoria Capital Group, CFA Governor, others to speak at UNILAG's student-led conference; The Finance Symposium 5.0",
     theme: "Africa’s Financial Renaissance: Inside FINSA’s Finance Symposium 5.0",
-    stats: "When events concludes",
+    stats: "3300+ Attendees",
     image: "/TFS5.jpeg"
   },{
     id: 2,
