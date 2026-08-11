@@ -9,7 +9,7 @@ import {
 } from "@directus/sdk";
 
 import { Schema, Testimonial, HomepageHero, Executive, Blog, Opportunity, Announcement, ContactInquiry } from "./libTypes";
-
+import {BlogType} from "../app/assets/blogPost"
 
 
 
@@ -105,7 +105,8 @@ export async function getBlogs(search = "", limit : 10): Promise<Blog[]> {
                     "publish_date",
                     "cover_image",
                     "slug",
-                     "content"
+                     "content",
+                     "link"
                 ],
                
                 sort: ["-publish_date"],
@@ -141,6 +142,34 @@ export async function getBlogsBySlug(slug : string): Promise<Blog[]> {
         )
     );
 }
+
+// export  function clientGetBlogsBySlug(slug : string): Promise<BlogType[]> {
+//     return withTimeout(
+//         client.request(
+//             readItems("blogs" , {
+//                 fields: [
+//                     "id",
+//                     "title",
+//                     "summary",
+//                     "author",
+//                     "publish_date",
+//                     "cover_image",
+//                     "slug",
+//                      "content",
+//                      "link"
+                    
+//                 ],
+//                 filter : {
+//                     slug: {
+//                       _eq : slug
+//                     }
+//                 },
+//                 sort: ["-publish_date"],
+               
+//             })
+//         )
+//     );
+// }
 
 export async function getOpportunities(): Promise<Opportunity[]> {
     return withTimeout(

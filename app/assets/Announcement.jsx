@@ -18,12 +18,23 @@ const hours = Math.floor((countdown/ (1000 * 60 * 60 )) % 24)
 export const announcements = [
   {
     id: 1,
-    tag: "Countdown",
-    title: `${ day > 0 ? day :  "D-Day of FINSA's symposium"} Days, ${hours} Hours to The Finance Symposium`,
-    time: "Just now",
-    summary: "The final countdown begins as preparation shifts to the final execution phase.",
-    details: "With two weeks remaining, the Executive Council is finalizing logistics for over 1,000 expected attendees. Please ensure all registration profiles are updated in the app event portal to guarantee expedited entry. Security and accreditation protocols will be enforced at the Main Auditorium entrance.",
-    priority: "high"
+    tag: "Exam Preparation",
+    title: `Exam Preparation: 2024/2026 Session`,
+    time_stamp: "22-06-2026:00:00:00",
+    summary: "Amarachi Confidence General Secretary 25/26",
+    full_message:`
+
+A few reminders as you go into this period:
+* Get proper rest before each paper; a tired mind forgets what it knows.
+* ⁠Go early for your exams at least 30 minutes before the allotted time. 
+* ⁠Read every question carefully before you start writing.
+* ⁠Manage your time across questions; don’t let one question eat into the marks of another.
+* ⁠Stay hydrated and eat properly, even when it feels like there’s no time.
+
+On behalf of the 25/26 executives, we’re rooting for every single one of you. Reach out to your class reps or the executives if you need anything during this period — notes, past questions, or just someone to talk to.
+
+You’ve got this. Go show up as the best version of your prepared self.`,
+    badge_type: "high"
 },
   
 ];

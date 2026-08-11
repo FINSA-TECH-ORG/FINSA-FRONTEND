@@ -1,12 +1,12 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { getBlogsBySlug } from '@app/lib/Finsa'; // Adjust import based on your architecture
+import { notFound } from 'next/navigation'; // Adjust import based on your architecture
 import {useEffect, useState} from "react";
-import { div } from 'framer-motion/client';
+import { blogData } from '@app/app/assets/blogPost';
+import { useSearchParams } from 'next/navigation';
 
-const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "";
+//const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "";
 export type BlogType = {
   id: number;
   author: string;
@@ -26,34 +26,38 @@ interface BlogPostPageProps {
 }
 
 export const BlogPostPage =({ params }: BlogPostPageProps)=> {
-  const [blog, setBlog] = useState<BlogType>();
-  const getInfoFromParam = async()=> {
- const { slug } = await params;
-  //console.log(slug)
-  // Fetching single blog post from Directus using your SDK helper
-  const rawBlog = await getBlogsBySlug(slug);
+  //const [blog, setBlog] = useState<BlogType>();
+ 
+//   const getInfoFromParam = async()=> {
+//  //const slug  =  params?.slug;
+//   //console.log(slug)
+//   // Fetching single blog post from Directus using your SDK helper
+//   const rawBlog = blogData[0];
 
-  if (!rawBlog) {
-    notFound();
-  }
+//   if (!rawBlog) {
+//     notFound();
+//   }
 
-  // Explicit type matching for your custom structure
-  const passedData = rawBlog as unknown as BlogType[];
- const blog = passedData[0];
- setBlog(blog)
+//   // Explicit type matching for your custom structure
+//   const passedData = rawBlog as unknown as BlogType[];
+//  const blog = passedData[0];
+//  setBlog(blog)
   
-}
+// }
 
-useEffect(()=> {
-  const callBack = async()=> {
-  await getInfoFromParam()
-  }
-  callBack()
-})
+// useEffect(()=> {
+//   const callBack = async()=> {
+//   await getInfoFromParam()
+//   }
+//   callBack()
+// })
+// console.log(blog)
+
+const blog = blogData[0]
 //console.log(blog?.cover_image);
   return (
     <div>
-      {blog?.id ? (
+      {blog.slug ? (
     <main className="min-h-screen bg-white pt-36 pb-32 px-6">
       <div className="max-w-4xl mx-auto">
         
@@ -92,7 +96,8 @@ useEffect(()=> {
         {blog.cover_image && (
           <div className="relative h-[300px] md:h-[480px] w-full rounded-[2.5rem] overflow-hidden mb-16 shadow-sm border border-slate-100 bg-[#f7f7f6]">
             <Image
-              src={`${imagesBaseUrl}/assets/${blog.cover_image}`}
+              //src={`${imagesBaseUrl}/assets/${blog.cover_image}`}
+              src={blog.cover_image}
               alt={blog.title}
               fill
               className="object-cover"

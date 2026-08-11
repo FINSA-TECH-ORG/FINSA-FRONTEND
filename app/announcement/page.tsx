@@ -2,30 +2,31 @@
 import { useState, useEffect  } from 'react';
  import { getAnnouncements } from '@app/lib/Finsa';
  import { Announcement } from '@app/lib/libTypes';
+ import {announcements} from "../assets/Announcement"
 const AnnouncementChannel = () => {
   const [activeNews, setActiveNews] = useState<any>(null);
   const [announcementData, setAnnouncementData] = useState<Announcement[]>([]);
   const [isLoading, setIsLoading] = useState(false)
-   const FetchOpp = async()=> {
-    try {
-      setIsLoading(true);
-    const response =  await getAnnouncements()
-     setAnnouncementData(response)
-    }catch(err){
-      throw new Error("Error Occuring the")
-    } finally {
-      setIsLoading(false);
-    }
-  //console.log(response)
-   }
-   useEffect(()=> {
-    const callBack = async()=> {
-    FetchOpp()
-    }
-    callBack()
-   },[])
+  //  const FetchOpp = async()=> {
+  //   try {
+  //     setIsLoading(true);
+  //   const response =  await getAnnouncements()
+  //    setAnnouncementData(response)
+  //   }catch(err){
+  //     throw new Error("Error Occuring the")
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // //console.log(response)
+  //  }
+  //  useEffect(()=> {
+  //   const callBack = async()=> {
+  //   FetchOpp()
+  //   }
+  //   callBack()
+  //  },[])
 
-  return (
+   return (
     <section className="bg-white py-20 px-4 mt-10 min-h-screen">
       {/* Centered Container for Large Screens, Full Width for Small */}
       <div className="max-w-3xl mx-auto w-full"> 
@@ -46,8 +47,8 @@ const AnnouncementChannel = () => {
 
         {/* The Update Feed */}
         <div className="space-y-3">
-          {announcementData?.length > 0 ? (
-            announcementData.map((news) => (
+          {announcements?.length > 0 ? (
+            announcements.map((news) => (
             <div 
               key={news.id}
               onClick={() => setActiveNews(news)}
@@ -68,7 +69,7 @@ const AnnouncementChannel = () => {
                     {/* {news.badge_type} */}
                     {news?.badge_type}
                   </span>
-                  <span className="text-[#6c788e] text-[10px] font-medium uppercase tracking-tighter">{news.timestamp ? news?.timestamp?.slice(0, 10) : "" }</span>
+                  <span className="text-[#6c788e] text-[10px] font-medium uppercase tracking-tighter">{news.time_stamp ? news?.time_stamp?.slice(0, 10) : "" }</span>
                 </div>
                 <h3 className="text-slate-900 font-bold md:text-lg group-hover:text-[#1853ad] transition-colors">
                   {news.title}

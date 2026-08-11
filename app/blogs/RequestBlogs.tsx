@@ -1,7 +1,9 @@
+"use client" //Remove the Use client when the directus application is ready
 import Image from "next/image";
-import { getBlogs } from "@app/lib/Finsa";
+//import { getBlogs } from "@app/lib/Finsa";
 import Link from "next/link";
-const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
+import {blogData} from "../assets/blogPost";
+//const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 
 type BlogType = {
   id : number
@@ -15,32 +17,36 @@ type BlogType = {
 
 }
 
-export default async function RequestBlogs({searchParam} : {searchParam : string}) {
+
+//Make Sure to change the requestBlogs back into a server component when the directus application endpoint is ready
+export default  function RequestBlogs({searchParam} : {searchParam : string }) {
 
 
  
- const posts = await getBlogs(searchParam, 10);
+ //const posts = await getBlogs(searchParam, 10);
 
 
   
 
 
     //console.log(posts)
-//const posts = blogData
-//    const filteredBlogs = posts.filter((blog) =>(
-//      blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//      blog.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//  blog.summary.toLowerCase().includes(searchQuery.toLowerCase())
-//     ))
+const posts = blogData
+   const filteredBlogs = posts.filter((blog) => searchParam?.length > 1 ?
+
+     blog.title.toLowerCase().includes(searchParam.toLowerCase()) ||
+     blog.author.toLowerCase().includes(searchParam.toLowerCase()) ||
+ blog.summary.toLowerCase().includes(searchParam.toLowerCase()) : posts
+    )
+    console.log(searchParam)
 
 
   return (
     <div className="bg-white min-h-screen  pb-24 ">
     
         {/* Dynamic Card Grid */}
-        {posts.length > 0 ? (
+        {filteredBlogs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {posts.map((blog) => (
+            {filteredBlogs.map((blog) => (
               <article 
                 key={blog.id} 
                 className="group flex flex-col bg-[#f7f7f6] rounded-[2.5rem] overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
@@ -48,7 +54,8 @@ export default async function RequestBlogs({searchParam} : {searchParam : string
                 {/* Image Section */}
                 <div className="relative h-64 w-full overflow-hidden">
                   <Image 
-                    src={`${baseUrl}/assets/${blog?.cover_image}`} 
+                  //  src={`${baseUrl}/assets/${blog?.cover_image}`} 
+                  src={blog?.cover_image}
                     alt={blog.title} 
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-700"

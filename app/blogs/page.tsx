@@ -1,17 +1,23 @@
+"use client" // This was changed to a client component for NextJs to recognize static export module
 import { Suspense } from 'react';
 import QueryBlogs from './QueryBlogs';
 import Refresh from '../component/RefreshBlogs';
 import RequestBlogs from './RequestBlogs';
-interface PageProps {
-  searchParams: Promise<{
-    search?: string;
-  }>;
-}
 
-export default async function BlogPage({ searchParams }: PageProps) {
-  // 1. Unpack the search parameter from the incoming request URL safely
-  const resolvedParams = await searchParams;
-  const currentSearchTerm = resolvedParams.search || "";
+
+//Part of Directus set up
+// interface PageProps {
+//   searchParams: Promise<{
+//     search?: string;
+//   }>;
+// }
+
+
+//Change back to a server component when directus is back up
+export default  function BlogPage({searchParam} :{searchParam : string}) {
+  // 1. Unpack the  parameter from the incoming request URL safely
+  // const resolvedParams =  searchParams;
+  // const currentSearchTerm = resolvedParams.search || "";
 
   return (
     <section className="bg-white min-h-screen  pb-24 px-6">
@@ -26,14 +32,16 @@ export default async function BlogPage({ searchParams }: PageProps) {
         </div>
 
         {/* 2. Keying Suspense to the string forces a smooth loading state fallback over the grid when typing */}
-        <Suspense key={currentSearchTerm} fallback={
+        {/* <Suspense key={currentSearchTerm} fallback={
           <div className="text-center py-32">
             <p className="text-slate-400 font-medium animate-pulse text-xl">Fetching Available Blogs...</p>
           </div>
-        }>
+        }> */}
           {/* Feed parameter directly into the Server layout */}
-          <RequestBlogs searchParam={currentSearchTerm} />
-        </Suspense>
+          {/* <RequestBlogs searchParam={currentSearchTerm} /> */}
+
+          <RequestBlogs searchParam={searchParam} />
+        {/* </Suspense> */}
 
       </div>
     </section>

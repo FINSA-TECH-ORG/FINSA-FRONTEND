@@ -1,3 +1,4 @@
+
 export interface HomepageHero {
     hero_background_image: string;
     hero_heading: string;
@@ -23,7 +24,8 @@ export interface Blog {
     publish_date: string;
     cover_image: string;
     slug: string;
-    content : string
+    content : string;
+    link ?: string
 
 }
 
@@ -60,7 +62,7 @@ export interface ContactInquiry {
 export interface Schema {
     homepage_hero: HomepageHero;
     executives: Executive[];
-    blogs: Blog[];
+    blogs: Blog[]; //Add Blog[] when directus is back up
     internships_opportunities: Opportunity[];
     announcements: Announcement[];
     contact_inquiries: ContactInquiry[];
