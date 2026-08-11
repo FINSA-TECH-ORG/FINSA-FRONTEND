@@ -1,4 +1,4 @@
-"use client" //Remove the Use client when the directus application is ready
+//Remove the Use client when the directus application is ready
 import Image from "next/image";
 import Link from "next/link";
 import {blogData} from "../assets/blogPost";
@@ -18,7 +18,7 @@ type BlogType = {
 
 
 //Make Sure to change the requestBlogs back into a server component when the directus application endpoint is ready
-export default  function RequestBlogs({searchParam} : {searchParam : string }) {
+export default  async function RequestBlogs({searchParam} : {searchParam : string }) {
 //const posts = await getBlogs(searchParam, 10);
 //console.log(posts)
 const posts = blogData
