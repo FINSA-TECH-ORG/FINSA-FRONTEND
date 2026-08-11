@@ -1,10 +1,7 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation'; // Adjust import based on your architecture
-import {useEffect, useState} from "react";
 import { blogData } from '@app/app/assets/blogPost';
-import { useSearchParams } from 'next/navigation';
 
 //const imagesBaseUrl = process.env.NEXT_PUBLIC_DIRECTUS_URL || "";
 export type BlogType = {

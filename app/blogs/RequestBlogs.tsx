@@ -1,9 +1,8 @@
 "use client" //Remove the Use client when the directus application is ready
 import Image from "next/image";
-//import { getBlogs } from "@app/lib/Finsa";
 import Link from "next/link";
 import {blogData} from "../assets/blogPost";
-//const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
+
 
 type BlogType = {
   id : number
@@ -20,16 +19,8 @@ type BlogType = {
 
 //Make Sure to change the requestBlogs back into a server component when the directus application endpoint is ready
 export default  function RequestBlogs({searchParam} : {searchParam : string }) {
-
-
- 
- //const posts = await getBlogs(searchParam, 10);
-
-
-  
-
-
-    //console.log(posts)
+//const posts = await getBlogs(searchParam, 10);
+//console.log(posts)
 const posts = blogData
    const filteredBlogs = posts.filter((blog) => searchParam?.length > 1 ?
 
@@ -37,7 +28,6 @@ const posts = blogData
      blog.author.toLowerCase().includes(searchParam.toLowerCase()) ||
  blog.summary.toLowerCase().includes(searchParam.toLowerCase()) : posts
     )
-    console.log(searchParam)
 
 
   return (
