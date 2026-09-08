@@ -1,29 +1,29 @@
 "use client";
 
 import  {  useState, useEffect } from 'react';
-// import { opportunities } from '../assets/internship&scholarship';
- import { getOpportunities } from '@app/lib/Finsa';
+ import { opportunities } from '../assets/internship&scholarship';
+ //import { getOpportunities } from '@app/lib/Finsa';
 import { Opportunity } from '@app/lib/libTypes';
 import Refresh from '../component/RefreshBlogs';
 import EmptyInternships from './NoInternshipState';
 const InternshipHub = () => {
   const [selectedOp, setSelectedOp] = useState<any>(null);
 const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([]);
- const FetchOpp = async()=> {
-  try {
-  const response =  await getOpportunities()
-   setInternOpportunites(response)
-  }catch(err){
-    throw new Error("Error Occuring the")
-  }
-//console.log(response)
- }
- useEffect(()=> {
-  const callBack = async()=> {
-  FetchOpp()
-  }
-  callBack()
- },[])
+//  const FetchOpp = async()=> {
+//   try {
+//   const response =  await getOpportunities()
+//    setInternOpportunites(response)
+//   }catch(err){
+//     throw new Error("Error Occuring the")
+//   }
+// //console.log(response)
+//  }
+//  useEffect(()=> {
+//   const callBack = async()=> {
+//   FetchOpp()
+//   }
+//   callBack()
+//  },[])
 //console.log(internOpportunities);
   return (
     <section className="bg-[#f7f7f6] py-24 px-6 min-h-screen">
@@ -38,8 +38,8 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
         </div>
  {/* The Update Bar List */}
         <div className="space-y-4">
-          {internOpportunities?.length > 0 ? (
-          internOpportunities.map((op) => (
+          {opportunities?.length > 0 ? (
+          opportunities.map((op) => (
             <div 
               key={op.id}
               onClick={() => setSelectedOp(op)}
@@ -48,19 +48,19 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
                cursor-pointer hover:border-[#1853ad] hover:shadow-xl transition-all
                 duration-300 relative overflow-hidden">
               {/* "New" or "Urgent" Indicator */}
-              <div className={`absolute left-0 top-0 bottom-0 w-1 ${op.type_badge === 'New' ? 'bg-[#0c95d9]' : 'bg-[#b24a53]'}`} />
+              <div className={`absolute left-0 top-0 bottom-0 w-1 ${op.status === 'New' ? 'bg-[#0c95d9]' : 'bg-[#b24a53]'}`} />
 
               <div className="flex flex-col md:flex-row items-center gap-6 w-full">
                 <div className="flex-shrink-0 text-center md:text-left">
                   <span className="block text-[10px] font-black text-[#6c788e] uppercase tracking-widest mb-1">Company</span>
-                  <span className="text-lg font-bold text-[#1853ad]">{op.company_name}</span>
+                  <span className="text-lg font-bold text-[#1853ad]">{op.company}</span>
                 </div>
                 
                 <div className="h-px w-full md:h-10 md:w-px bg-slate-100" />
 
                 <div className="flex-grow text-center md:text-left">
                   <span className="block text-[10px] font-black text-[#6c788e] uppercase tracking-widest mb-1">Position</span>
-                  <span className="text-slate-900 font-semibold">{op.position}</span>
+                  <span className="text-slate-900 font-semibold">{op.role}</span>
                 </div>
 
                 <div className="flex-shrink-0 text-center md:text-left">
@@ -99,13 +99,13 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
 
             <div className="mb-8">
               <span className="inline-block bg-[#1853ad]/10 text-[#1853ad] px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">
-                {selectedOp.type_bagde}
+                {selectedOp.status}
               </span>
               <h3 className="text-3xl font-black text-[#1853ad] tracking-tighter leading-none mb-2">
-                {selectedOp.position}
+                {selectedOp.role}
               </h3>
               <p className="text-[#b24a53] font-bold text-lg uppercase tracking-tight">
-                {selectedOp.company_name}
+                {selectedOp.company}
               </p>
             </div>
 
@@ -113,7 +113,7 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
               <div>
                 <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 underline decoration-[#0c95d9] decoration-2 underline-offset-4">Details</h4>
                 <p className="text-[#6c788e] leading-relaxed italic">
-                  {selectedOp.popup_details}
+                  {selectedOp.longDescription}
                 </p>
               </div>
 
@@ -121,7 +121,7 @@ const [internOpportunities, setInternOpportunites] = useState<Opportunity[]>([])
                 <p className="text-[#6c788e] text-xs">
                   Applications close: <span className="font-bold text-slate-900">{selectedOp.deadline}</span>
                 </p>
-                <a href={selectedOp?.application_link}
+                <a href={selectedOp?.link}
                  className="bg-[#1853ad] text-white px-8 py-3 rounded-full font-black text-xs uppercase tracking-widest hover:bg-[#b24a53]
                  transition-colors shadow-lg shadow-[#1853ad]/20">
                   Apply Now

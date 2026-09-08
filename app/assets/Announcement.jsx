@@ -18,6 +18,21 @@ const hours = Math.floor((countdown/ (1000 * 60 * 60 )) % 24)
 export const announcements = [
   {
     id: 1,
+    tag: "Insustry Talk 4.0",
+    title: `Industry Talk 4.0: What’s Next?`,
+    time_stamp: "22-06-2026:00:00:00",
+    summary: "The 25/26 executives are excited to announce the upcoming Industry Talk 4.0, a three-day event designed to help you explore your career options, entrepreneurship opportunities, and internship prospects.",
+    full_message:`
+Something exciting is coming 👀🎙️
+Industry Talk 4.0 is almost here, and this one is all about helping you figure out what’s next, whether that’s building your career, exploring entrepreneurship, or landing the right internship.
+
+Save the dates: 25th–27th September 2026.
+
+More details soon. You definitely want to keep an eye out for this one. 💙`,
+    badge_type: "high"
+},
+  {
+    id: 2,
     tag: "Exam Preparation",
     title: `Exam Preparation: 2024/2026 Session`,
     time_stamp: "22-06-2026:00:00:00",
@@ -34,7 +49,11 @@ A few reminders as you go into this period:
 On behalf of the 25/26 executives, we’re rooting for every single one of you. Reach out to your class reps or the executives if you need anything during this period — notes, past questions, or just someone to talk to.
 
 You’ve got this. Go show up as the best version of your prepared self.`,
-    badge_type: "high"
+    badge_type: "low"
 },
+
+ 
+
+
   
 ];
