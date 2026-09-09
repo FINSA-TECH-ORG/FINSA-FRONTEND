@@ -34,7 +34,7 @@ More details soon. You definitely want to keep an eye out for this one. 💙`,
   {
     id: 2,
     tag: "Exam Preparation",
-    title: `Exam Preparation: 2024/2026 Session`,
+    title: `Exam Preparation: 2025/2026 Session`,
     time_stamp: "22-06-2026:00:00:00",
     summary: "Amarachi Confidence General Secretary 25/26",
     full_message:`
