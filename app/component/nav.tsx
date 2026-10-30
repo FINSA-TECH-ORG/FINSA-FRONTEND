@@ -34,7 +34,7 @@ useEffect(()=> {
      {id : 2, nav : "Meet the Executives",link : "/Executives"},
     {id : 3, nav :   "Blogs", link : "/blogs"},
      {id : 4, nav :"Internship and scholarship opport..", link : "/internship&scholarship"}, 
-     {id : 5, nav : "Announcement", link : "/announcement"},
+     {id : 5, nav : "Program", link : "/program"},
       {id : 6, nav : "ContactUs" , link : "/contact"}
   ]
  

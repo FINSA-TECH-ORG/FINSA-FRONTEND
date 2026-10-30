@@ -10,72 +10,74 @@ const executives = [
   {
     id: 1,
     role: "President",
-    full_name: "Hamed Tijani",
-    bio: "As the team leader,Hamed heads the executive cabinet to keep everyone organized, motivated, and working toward the same goals. Serving as the official face of the association, he acts as the primary spokesperson when dealing with University authorities, professors, and external partners. Additionally, Hamed operates as the corporate liaison by meeting with executives, financial institutions, and guest speakers to secure sponsorships and career opportunities for students. Ultimately, he is the primary decision maker, holding full accountability for the association’s budget, strategy, and overall legacy during their tenure.",
-    profile_image: "/President.jpg"
+    full_name: "David Owoyemi",
+    bio: `He serves as President of FINSA UNILAG for the 2026/2027 session, having previously served as Vice President.
+
+Through initiatives such as The Finance Symposium (TFS), the Skills Acquisition Programme (SAP), and industry visits, he is committed to empowering students, fostering industry partnerships, and bridging the gap between academic knowledge and professional practice.`,
+    profile_image: "/President.avif"
   },
   {
     id: 2,
     role: "Vice President",
-    full_name: "David O. Owoyemi",
-    bio: "David Provides strategic support to the President, oversees academic affairs to uphold high standards and student development, and coordinates programs and committees to ensure alignment with the association’s vision and objectives.",
-    profile_image: "/VicePresident.jpg"
+    full_name: "Olalekan F. Aduke ",
+    bio: "Olalekan Fathia Aduke serves as the Vice President of FINSA, where she assists in leading executive operations, coordinating administrative activities, and fostering strong synergy across all committees.",
+    profile_image: "/VicePresident.avif"
   },
   {
     id: 3,
     role: "General Secretary",
-    full_name: "Amarachi Nwogu",
-    bio: "Amarachi is a key administrative leader responsible for coordination between students, committees, and executives . She manage records, agendas, and communications while voicing concerns, ensuring compliance, and promoting inclusivity through strong organization and leadership skills.",
-    profile_image: "/GenSec.jpg"
+    full_name: "John Ocheme",
+    bio: "John is a key administrative leader responsible for coordination between students, committees, and executives . He manage records, agendas, and communications while voicing concerns, ensuring compliance, and promoting inclusivity through strong organization and leadership skills.",
+    profile_image: "/GeneralSec.avif"
   },
   {
     id: 4,
     role: "Assistant General Secretary",
-    full_name: "Foyinsola S. Olaosebikan",
-    bio: "In this role, Foyinsola handles the documentation of executive meetings, ensuring that accurate minutes are recorded, decisions are tracked, and action items are clearly communicated to the cabinet. Foyinsola manages the association's official correspondence, scheduling, and member databases, keeping administrative pipelines running smoothly behind the scenes. When the General Secretary is unavailable, Foyinsola steps in to lead the secretariat.",
-    profile_image: "/AssistantGenSec.jpg"
+    full_name: "Okunlola Peculiar",
+    bio: "Okunlola Peculiar is a penultimate-year Finance student at the University of Lagos and the Assistant General Secretary of the Finance Students' Association (FINSA), UNILAG Division. In this role, I support the General Secretary in the day-to-day administration of the association, assists with documentation, and helps to ensure that all administrative tasks are completed efficiently.",
+    profile_image: "/AssistantGenSec.avif"
   },
   {
     id: 5,
     role: "Financial Secretary",
-    full_name: "Oderinde A. Aisha",
-    bio: "Ashabi serves as the Financial Secretary, playing a vital role in managing the organization’s financial activities with transparency, accountability, and efficiency. She is responsible for keeping accurate financial records, coordinating budgets, monitoring expenditures, and ensuring proper documentation of all financial transactions. Through her dedication and attention to detail, she supports effective planning and smooth execution of programs and activities within the association.",
-    profile_image: "/FinSec.jpg"
+    full_name: "Chijioke Emmanuel Chibuzor",
+    bio: "Chijioke Emmanuel Chibuzor serves as the Financial Secretary, where he keeps accurate records of the association's income and expenditure.",
+    profile_image: "/FinSecretary.avif"
   },
   {
     id: 6,
     role: "Treasurer",
-    full_name: "John Ocheme",
-    bio: "John handles dues collection, verify payments, and follow up with students who have outstanding obligatory fees. He also works closely with the Financial Secretary to maintain accurate financial records and supports other executive members to ensure the smooth running of the association.",
-    profile_image: "/Treasurer.jpg"
+    full_name: "Jegede Oluwafikunayomi Daniel",
+    bio: "Oluwafikunayomi Daniel Jegede serves as the Treasurer of FINSA, where he is responsible for managing the association’s finances, maintaining accurate financial records, and promoting transparency and accountability in financial transactions.",
+    profile_image: "/Treasurer.avif"
   },
   {
     id: 7,
     role: "Sport Secretary",
-    full_name: "Prosper Chukwuebuka Ugbor",
-    bio: "Prosper is the Administrative head in charge of FINSA sport Activities. He handles correspondence, meeting minutes/agendas, records, membership, event coordination, official communications, and compliance to support smooth sports operations.",
-    profile_image: "/SportSec.jpg"
+    full_name: "Temitope Adeyehun",
+    bio: "Temitope Adeyehun is a 400-level Finance student, videographer, and Creative Director of TalentedShotIt Visuals. He serves as the Sports Secretary of FINSA UNILAG and enjoys creativity, meeting people, and creating meaningful experiences.",
+    profile_image: "/SportSecretary.avif"
   },
    {
     id: 8,
     role: "Social Secretary",
-    full_name: "Eunice Jagunna Toluwalase",
-    bio: " Eunice is responsible for promoting the welfare and unity of members by organizing social activities and events, coordinating member engagement initiatives, celebrating important occasions, and ensuring effective communication that strengthens bonding and participation within the association.",
-    profile_image: "/SocialSec.jpg"
+    full_name: "Emmanuel Komolafe",
+    bio: "Emmanuel is responsible for promoting the welfare and unity of members by organizing social activities and events, coordinating member engagement initiatives, celebrating important occasions, and ensuring effective communication that strengthens bonding and participation within the association.",
+    profile_image: "/SocialSecretary.avif"
   },
    {
     id: 9,
-    role: "Welfare Secretary",
-    full_name: "Daniella Ugwuebgbu",
-    bio: " Daniella serves as the Welfare Secretary, prioritizing the well-being and comfort of students within the association. She coordinates welfare initiatives, plans supportive programs, and ensures that members feel heard, valued, and included. She works closely with other executives to create a balanced academic and social environment, while providing guidance and assistance when students need it most. Through empathy, organization, and dedication, she helps make student life more enjoyable and stress-free.",
-    profile_image: "/WelFareSec.jpg"
+    role: "Welfare",
+    full_name: "Lateef Olabisi Omolola",
+    bio: "Lateef Olabisi Omolola serves as the Welfare Secretary, where she looks after the well-being and interests of members. She identifies their needs, coordinates support initiatives, and acts as a link between members and the executive council to make sure concerns are heard and addressed promptly. She also helps organize welfare programs, encourages unity and a caring community, and works with other executives to keep the association's environment supportive and inclusive.",
+    profile_image: "/Welfare.avif"
   },
   {
     id: 10,
     role: "Public Relations officer",
-    full_name: "Adeyehun Temitope",
-    bio: " Temitope serve as the voice and image of the association by communicating important information to students, promoting our programs and events, managing our public image, and building strong relationships between the association, the student body, and the school management.",
-    profile_image: "/PublicRelationOfficer.jpg"
+    full_name: "Joshua Oyedele Olamide",
+    bio: " Joshua Oyedele Olamide is a 300-level Finance student at the University of Lagos, a video editor, content creator, and the PRO of FINSA UNILAG. He is passionate about creativity, storytelling, and building meaningful connections.",
+    profile_image: "/PublicRelations.avif"
   }
 ];
 

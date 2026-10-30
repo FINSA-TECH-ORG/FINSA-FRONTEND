@@ -19,23 +19,24 @@ export interface FinsaEvent {
 
 export const FINSA_EVENTS_DATA: FinsaEvent[] = [
   {
-    id: 'freshers-orientation',
-    title: "Freshers' Orientation",
-    tagline: "Welcome to the Vanguard of Finance",
-    description: "An interactive introduction welcoming our new inductees into the department. This session outlines academic pathways, introduces peer mentorship networks, and sets the foundational benchmark for absolute excellence in the finance ecosystem.",
-    linkedinText: " Welcoming the Next Generation: Relive the highlights, academic insights, and mentorship introductions from our official Freshers' Orientation ceremony.",
-    linkedinUrl: "/",
-    imagePath: "/fresher.avif", // Replace with your Directus asset path once uploaded
-    layoutDirection: 'normal',
-    styles: {
-      badgeBg: 'bg-blue-50',
-      badgeText: 'text-blue-600',
-      accentText: 'text-blue-600',
-      cardBg: 'bg-gradient-to-br from-blue-50/40 to-transparent',
-      gradientBg: 'from-blue-600 to-sky-500'
-    }
+  id: 'tfs',
+  title: "The Finance Symposium (TFS)",
+  tagline: "Convergence of Industry Leaders & Financial Visionaries",
+  description: "The flagship intellectual gathering bringing together seasoned market executives, policy makers, and corporate finance pioneers. Through high-impact panel sessions, macroeconomic keynotes, and fireside chats, TFS connects students directly with the strategic realities shaping global and emerging markets.",
+  linkedinText: " Shaping Future Markets: Key highlights, policy takeaways, and executive insights from The Finance Symposium.",
+  linkedinUrl: "https://linkedin.com/company/finsa-unilag",
+  imagePath: "/TFS-43.avif",
+  layoutDirection: 'normal', // Set to 'normal' or 'reverse' based on its position in your sequence
+  styles: {
+    badgeBg: 'bg-cyan-50',
+    badgeText: 'text-cyan-800',
+    accentText: 'text-cyan-700',
+    cardBg: 'bg-gradient-to-br from-cyan-50/40 via-blue-50/20 to-transparent',
+    gradientBg: 'from-cyan-700 via-blue-700 to-indigo-800'
+  
+}
   },
-  {
+   {
     id: 'skill-acquisition',
     title: "Skill Acquisition Program",
     tagline: "Bridging Classrooms with Industry Demands",
@@ -52,6 +53,25 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
       gradientBg: 'from-sky-600 to-indigo-500'
     }
   },
+  
+  {
+    id: 'freshers-orientation',
+    title: "Freshers' Orientation",
+    tagline: "Welcome to the Vanguard of Finance",
+    description: "An interactive introduction welcoming our new inductees into the department. This session outlines academic pathways, introduces peer mentorship networks, and sets the foundational benchmark for absolute excellence in the finance ecosystem.",
+    linkedinText: " Welcoming the Next Generation: Relive the highlights, academic insights, and mentorship introductions from our official Freshers' Orientation ceremony.",
+    linkedinUrl: "/",
+    imagePath: "/fresher.avif", // Replace with your Directus asset path once uploaded
+    layoutDirection: 'normal',
+    styles: {
+      badgeBg: 'bg-blue-50',
+      badgeText: 'text-blue-600',
+      accentText: 'text-blue-600',
+      cardBg: 'bg-gradient-to-br from-blue-50/40 to-transparent',
+      gradientBg: 'from-blue-600 to-sky-500'
+    }
+  },
+ 
   {
     id: 'sports-events',
     title: "FINSA Sports Festival",

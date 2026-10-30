@@ -1,5 +1,5 @@
   "use client"
-  import FINSAGroup from "../../public/FINSAGroup.jpg";
+  import FINSAGroup from "../../public/Group.jpeg";
 import FinsaMobileImage from "../../public/FinsaMobileImage.jpg"
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -11,14 +11,15 @@ export default function Home() {
 
   
 return(
-  <section className="relative w-full h-screen  lg:min-h-[800px] bg-[#F7FFF6] bg-white flex items-center justify-center overflow-hidden">
+  <section className="relative w-full h-screen  
+  lg:min-h-[1200px] bg-[#F7FFF6] bg-white flex items-center justify-center overflow-hidden">
 
       {/* Background Image */}
-      <div className="absolute top-0  inset-0">
+      <div className="absolute top-0 inset-0 ">
         <Image
           src={FINSAGroup}
          alt="FINSA UNILAG Executive Committee and Students at the Finance Symposium"
-          className="w-full h-full  md:object-cover hidden md:block"
+          className="w-full h-full object-cover md:object-cover hidden md:block"
         />
        
         <div className="absolute inset-0 bg-black/40 md:block hidden" />
@@ -31,7 +32,7 @@ return(
       <div className="flex flex-col-reverse md:mt-0 mt-50 sm:mt-20">
         
         <Image
-          src={FinsaMobileImage}
+          src={FINSAGroup}
           alt="FINSA UNILAG Executive Committee and Students at the Finance Symposium"
           className="w-full h-full object-contain md:hidden flex"
         />
@@ -44,7 +45,7 @@ return(
           transition={{ duration: 0.8 }}
           className="md:text-white  text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
         >
-          Developing Future-Ready Finance Leaders
+        Breeding World-Class Financial Analysts
         </motion.h1>
 
         <div
