@@ -7,6 +7,7 @@ export interface FinsaEvent {
   linkedinText: string;
   linkedinUrl: string;
   imagePath: string;
+  events_media_link : string;
   layoutDirection: 'normal' | 'reverse';
   styles: {
     badgeBg: string;
@@ -25,6 +26,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
   description: "The flagship intellectual gathering bringing together seasoned market executives, policy makers, and corporate finance pioneers. Through high-impact panel sessions, macroeconomic keynotes, and fireside chats, TFS connects students directly with the strategic realities shaping global and emerging markets.",
   linkedinText: " Shaping Future Markets: Key highlights, policy takeaways, and executive insights from The Finance Symposium.",
   linkedinUrl: "https://linkedin.com/company/finsa-unilag",
+  events_media_link : "/program/tfs",
   imagePath: "/TFS-43.avif",
   layoutDirection: 'normal', // Set to 'normal' or 'reverse' based on its position in your sequence
   styles: {
@@ -44,6 +46,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     linkedinText: " Industrial Readiness: Discover how our intensive Skill Acquisition Program is equipping students with technical workflows and modern analytics frameworks.",
     linkedinUrl: "/",
     imagePath: "/MentorDummyThree.jpg",
+    events_media_link : "prgram/skillAcquisition",
     layoutDirection: 'reverse', // Switches image to the right side
     styles: {
       badgeBg: 'bg-sky-50',
@@ -60,6 +63,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     tagline: "Welcome to the Vanguard of Finance",
     description: "An interactive introduction welcoming our new inductees into the department. This session outlines academic pathways, introduces peer mentorship networks, and sets the foundational benchmark for absolute excellence in the finance ecosystem.",
     linkedinText: " Welcoming the Next Generation: Relive the highlights, academic insights, and mentorship introductions from our official Freshers' Orientation ceremony.",
+    events_media_link : "program/freshersmedia",
     linkedinUrl: "/",
     imagePath: "/fresher.avif", // Replace with your Directus asset path once uploaded
     layoutDirection: 'normal',
@@ -79,6 +83,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     description: "Shifting gears from computational spreadsheets to athletic fields. The annual sports event fosters peer collaboration, strategic teamwork, and physical well-being through friendly track, field, and indoor competitive tournaments.",
     linkedinText: " Beyond the Classroom: Celebrating teamwork, strategic execution, and athletic synergy at the annual FINSA Sports Festival.",
     linkedinUrl: "/",
+    events_media_link : "program/sportsfestival",
     imagePath: "/SportsFest.avif",
     layoutDirection: 'normal',
     styles: {
@@ -96,6 +101,7 @@ export const FINSA_EVENTS_DATA: FinsaEvent[] = [
     description: "The ultimate flagship gathering honoring the brilliant achievements of our outstanding students, dedicated faculty members, and supportive corporate alumni networks. A night characterized by premium network interactions, fine dining, and prestigious acknowledgments.",
     linkedinText: " A Night of Excellence: Honoring outstanding academic achievements and celebrating leadership milestones at the grand FINSA Dinner & Awards Gala.",
     linkedinUrl: "/",
+    events_media_link : "program/dinner",
     imagePath: "/Dinner.avif",
     layoutDirection: 'reverse',
     styles: {

@@ -5,7 +5,7 @@ import { Executive } from '@app/lib/libTypes';
 import { getExecutives } from '@app/lib/Finsa';
 import Refresh from '../component/RefreshBlogs';
 
-const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
+//const baseUrl = `${process.env.NEXT_PUBLIC_DIRECTUS_URL}`
 const executives = [
   {
     id: 1,
@@ -106,7 +106,7 @@ const [isLoading, setIsLoading] = useState(false)
   //const executivesData = await  getExecutives()
   //console.log(executivesData)
   return (
-    <section className="bg-[#f7f7f6] py-24">
+    <section className="bg-[#f7f7f6] py-24 mt-20">
       <Refresh/>
       <div className="max-w-7xl mx-auto px-6">
         

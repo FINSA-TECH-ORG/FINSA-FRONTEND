@@ -1,7 +1,8 @@
 
-import {Geist_Mono } from "next/font/google";
+import {Geist_Mono, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/nav";
+import Link from "next/link";
 import { Footer } from "./component/footer";
 
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${geistMono.variable}`}
       >
+    
         <Navbar/>
 {children}
 <Footer/>
