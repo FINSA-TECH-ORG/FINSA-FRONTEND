@@ -29,7 +29,7 @@ return(
       <Navbar />
 
       {/* Center Content */}
-      <div className="flex flex-col-reverse md:mt-0 mt-50 sm:mt-20">
+      <div className="flex flex-col-reverse md:mt-0 mt-55 sm:mt-20">
         
         <Image
           src={FINSAGroup}
