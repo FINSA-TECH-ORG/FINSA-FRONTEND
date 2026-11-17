@@ -47,7 +47,7 @@ useEffect(()=> {
  
   return (
   <div className={`fixed top-0 w-full z-50 `}>
-    {isScrolled && (
+    {isScrolled === false && (
     <Link  href= "/program/freshersmedia"
          className=" py-5 w-full text-[16px] leading-[20px] font-bold hover:bg-blue-600
           flex justify-center items-center   text-center bg-red-800 px-5">
