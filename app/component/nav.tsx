@@ -47,7 +47,7 @@ useEffect(()=> {
  
   return (
   <div className={`fixed top-0 w-full z-50 `}>
-    {window !== undefined &&window?.scrollY < 440 && (
+    {isScrolled && (
     <Link  href= "/program/freshersmedia"
          className=" py-5 w-full text-[16px] leading-[20px] font-bold hover:bg-blue-600
           flex justify-center items-center   text-center bg-red-800 px-5">
@@ -55,7 +55,7 @@ useEffect(()=> {
           Get Yours Now!
         </Link>
     )}
-    <nav className={`absolute ${window?.scrollY > 440 ? "top-0" : "top-16"} left-0 w-full z-50 py-3 transition-all duration-500 ${navTheme}
+    <nav className={`absolute ${isScrolled ? "top-0" : "top-16"} left-0 w-full z-50 py-3 transition-all duration-500 ${navTheme}
    `}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
